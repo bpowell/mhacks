@@ -26,6 +26,7 @@
 		49A5A1C019BAC61E00E9CC50 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A5A1BF19BAC61E00E9CC50 /* SystemConfiguration.framework */; };
 		49A5A1C719BACD1500E9CC50 /* Insulin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1C619BACD1500E9CC50 /* Insulin.swift */; };
 		49A5A1CC19BAD30A00E9CC50 /* Glucose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1CB19BAD30A00E9CC50 /* Glucose.swift */; };
+		49A5A1CE19BAE6DE00E9CC50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1CD19BAE6DE00E9CC50 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		49A5A1C119BAC64E00E9CC50 /* TypeOneTwo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TypeOneTwo-Bridging-Header.h"; sourceTree = "<group>"; };
 		49A5A1C619BACD1500E9CC50 /* Insulin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insulin.swift; sourceTree = "<group>"; };
 		49A5A1CB19BAD30A00E9CC50 /* Glucose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glucose.swift; sourceTree = "<group>"; };
+		49A5A1CD19BAE6DE00E9CC50 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				49A5A18919BAC28300E9CC50 /* AppDelegate.swift */,
+				49A5A1CD19BAE6DE00E9CC50 /* Constants.swift */,
 				49A5A18B19BAC28300E9CC50 /* FirstViewController.swift */,
 				49A5A18D19BAC28300E9CC50 /* SecondViewController.swift */,
 				49A5A1C819BACD1A00E9CC50 /* Models */,
@@ -218,6 +221,7 @@
 				49A5A1C719BACD1500E9CC50 /* Insulin.swift in Sources */,
 				49A5A1CC19BAD30A00E9CC50 /* Glucose.swift in Sources */,
 				49A5A18C19BAC28300E9CC50 /* FirstViewController.swift in Sources */,
+				49A5A1CE19BAE6DE00E9CC50 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

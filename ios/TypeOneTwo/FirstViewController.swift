@@ -15,10 +15,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
 
     override func viewDidLoad() {
-        let user = PFUser.currentUser()
-        let object = PFObject(className: "Insulin", dictionary: [
-            "type": "value",
-        ])
+        navigationItem.title = "Enter Insulin"
     }
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

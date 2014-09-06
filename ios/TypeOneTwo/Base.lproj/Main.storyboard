@@ -54,6 +54,7 @@
                                 <rect key="frame" x="258" y="248" width="84" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Insulin">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -64,6 +65,7 @@
                                 <rect key="frame" x="246" y="304" width="109" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Glucose">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -93,37 +95,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dose" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-Y3-5Ib">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dose" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-Y3-5Ib">
                                 <rect key="frame" x="217" y="89" width="110" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9j2-Ke-fdf">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9j2-Ke-fdf">
                                 <rect key="frame" x="0.0" y="163" width="600" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="431674686.28114498">
                                     <!--2014-09-06 05:38:06 +0000-->
                                 </date>
                             </datePicker>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RWf-8d-MSV">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RWf-8d-MSV">
                                 <rect key="frame" x="207" y="127" width="187" height="29"/>
                                 <segments>
                                     <segment title="Rapid-Acting"/>
                                     <segment title="Long-Acting"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUJ-DQ-edl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUJ-DQ-edl">
                                 <rect key="frame" x="335" y="93" width="37" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Insulin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucg-Dk-zQO">
-                                <rect key="frame" x="236" y="40" width="129" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-Ox-JOW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-Ox-JOW">
                                 <rect key="frame" x="279" y="333" width="44" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save">
@@ -136,17 +132,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Nln-Y3-5Ib" firstAttribute="top" secondItem="Ucg-Dk-zQO" secondAttribute="bottom" constant="20" id="2tl-AX-LdO"/>
+                            <constraint firstItem="Nln-Y3-5Ib" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="25" id="8NY-ow-2n5"/>
                             <constraint firstItem="tNL-Ox-JOW" firstAttribute="top" secondItem="9j2-Ke-fdf" secondAttribute="bottom" constant="8" id="8su-tc-PJF"/>
                             <constraint firstItem="9j2-Ke-fdf" firstAttribute="top" secondItem="RWf-8d-MSV" secondAttribute="bottom" constant="8" id="C0Q-KB-Akd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9j2-Ke-fdf" secondAttribute="trailing" constant="-16" id="C5l-9X-Ltv"/>
                             <constraint firstItem="9j2-Ke-fdf" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="GdX-jq-JuI"/>
                             <constraint firstAttribute="centerX" secondItem="Nln-Y3-5Ib" secondAttribute="centerX" constant="28.5" id="TtO-81-ZDO"/>
                             <constraint firstItem="fUJ-DQ-edl" firstAttribute="leading" secondItem="Nln-Y3-5Ib" secondAttribute="trailing" constant="8" id="aYT-qc-1lX"/>
-                            <constraint firstItem="Ucg-Dk-zQO" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="20" id="bI9-la-Tkg"/>
                             <constraint firstItem="fUJ-DQ-edl" firstAttribute="centerY" secondItem="Nln-Y3-5Ib" secondAttribute="centerY" constant="-0.5" id="gjF-JJ-liL"/>
                             <constraint firstItem="RWf-8d-MSV" firstAttribute="top" secondItem="Nln-Y3-5Ib" secondAttribute="bottom" constant="8" id="kea-FJ-uS0"/>
-                            <constraint firstAttribute="centerX" secondItem="Ucg-Dk-zQO" secondAttribute="centerX" constant="-0.5" id="lzU-hK-pQl"/>
                             <constraint firstAttribute="centerX" secondItem="fUJ-DQ-edl" secondAttribute="centerX" constant="-53" id="n6O-gO-gze"/>
                             <constraint firstAttribute="centerX" secondItem="9j2-Ke-fdf" secondAttribute="centerX" id="t1z-Mm-gIq"/>
                             <constraint firstAttribute="centerX" secondItem="tNL-Ox-JOW" secondAttribute="centerX" constant="-0.5" id="zOC-tu-umc"/>
@@ -255,4 +249,5 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <color key="tintColor" red="0.0" green="0.84999999999999998" blue="0.28333333329999999" alpha="1" colorSpace="deviceRGB"/>
 </document>
