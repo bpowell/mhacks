@@ -21,7 +21,7 @@ func main() {
 func postHand(w http.ResponseWriter, r *http.Request) {
 	log.Printf("%s\n", r.Method)
 	if r.Method != "POST" {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "Error", http.StatusInternalServerError)
 	}
 
 	err := r.ParseForm()
