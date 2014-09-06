@@ -90,6 +90,15 @@ type ParseACLType struct {
 	Write bool
 }
 
+type ParseGlucose struct {
+	Date ParseDateType
+	Level int
+	CreatedAt time.Time
+	UpdatedAt time.Time
+	ObjectId string
+	ACL ParseACLType
+}
+
 func getstuff(user User) []byte{
 	client := &http.Client{
 	}
@@ -120,6 +129,7 @@ func getstuff(user User) []byte{
 	log.Printf("====================")
 
 
+	var parseGlucose [] ParseGlucose
 	for _, value := range glu {
 		log.Printf("====================")
 		var dateType ParseDateType
@@ -136,8 +146,24 @@ func getstuff(user User) []byte{
 		}
 		log.Printf("%+v\n", aclType)
 
+		var glucose ParseGlucose
+		glucose.Date = dateType
+		glucose.Level = value.Level
+		glucose.CreatedAt = value.CreatedAt
+		glucose.UpdatedAt = value.UpdatedAt
+		glucose.ObjectId = value.ObjectId
+		glucose.ACL = aclType
+
+		parseGlucose = append(parseGlucose, glucose)
+
 		log.Printf("====================")
 	}
+
+	log.Printf("====================")
+	log.Printf("====================")
+	log.Printf("%+v\n", parseGlucose)
+	log.Printf("====================")
+	log.Printf("====================")
 
 	return ([]byte(body))
 }
