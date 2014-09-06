@@ -12,7 +12,8 @@ func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/glucoseGraph", glucoseGraph)
 	http.HandleFunc("/glucose.json", glucoseJson)
-	http.HandleFunc("/insulin", insulinHandler)
+	http.HandleFunc("/insulinGraph", insulinGraph)
+	http.HandleFunc("/insulin.json", insulinJson)
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -39,12 +40,6 @@ type ParseDateType struct {
 type ParseACLType struct {
 	Read  bool
 	Write bool
-}
-
-func insulinHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	user := login("andrew", "andrew")
-	w.Write(getInsulinFromParse(user))
 }
 
 func login(username string, password string) User {

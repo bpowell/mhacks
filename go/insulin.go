@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 	"time"
+	"strings"
+	"fmt"
 )
 
 type Acting int
@@ -14,6 +16,16 @@ const (
 	rapid Acting = iota
 	long
 )
+
+func insulinJson(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	user := login("andrew", "andrew")
+	w.Write([]byte(getInsulinFromParse(user).toJson()))
+}
+
+func insulinGraph(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "insulingraph.html")
+}
 
 type ParseObjectInsulin struct {
 	Date json.RawMessage
@@ -32,7 +44,7 @@ type ParseInsulin struct {
 	Type Acting
 }
 
-func getInsulinFromParse(user User) []byte {
+func getInsulinFromParse(user User) ParseInsulinSlice {
 	client := &http.Client{}
 
 	req, _ := http.NewRequest("GET", "https://api.parse.com/1/classes/Insulin/", nil)
@@ -97,5 +109,24 @@ func getInsulinFromParse(user User) []byte {
 	log.Printf("====================")
 	log.Printf("====================")
 
-	return ([]byte(body))
+	return parseInsulin
+}
+
+type ParseInsulinSlice []ParseInsulin
+
+func (g ParseInsulinSlice) toJson() string {
+	var q []string
+	q = append(q, "[[\"Date\", \"Dose\"]")
+	for _, value := range g {
+		q = append(q, ",")
+		q = append(q, value.toArray())
+	}
+	q = append(q, "]")
+
+	return strings.Join(q, "")
+}
+
+func (g ParseInsulin) toArray() string {
+	const layout = "Jan 2, 2006 at 3:04pm (MST)"
+	return fmt.Sprintf("[\"%s\", %f]", g.Date.Iso.Format(layout), g.Dose)
 }
