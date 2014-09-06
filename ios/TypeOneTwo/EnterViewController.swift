@@ -9,6 +9,7 @@
 class EnterViewController: UITableViewController {
 
     var objects = [AnyObject]()
+    var oldObjects:[AnyObject]!
     var glucoseQueried = false, insulinQueried = false
 
     override func viewDidLoad() {
@@ -22,12 +23,35 @@ class EnterViewController: UITableViewController {
     }
 
     func populateArrays() {
+        oldObjects = objects
         objects.removeAll(keepCapacity: false)
-        // After querying both arrays, reload the table view.
+        glucoseQueried = false
+        insulinQueried = false
+
         let completion: () -> () = {
             [weak self] in
+            // After querying both arrays...
             if self!.glucoseQueried && self!.insulinQueried {
-                self!.tableView.reloadData()
+
+                // Sort the cumulative array.
+                self!.objects.sort() {
+                    ($0["date"] as NSDate).compare($1["date"] as NSDate)
+                        == NSComparisonResult.OrderedDescending
+                }
+
+                // Check for array equality and only reload if they're unequal.
+                if self!.oldObjects.count != self!.objects.count {
+                    // Different lengths.
+                    self!.tableView.reloadData()
+                } else {
+                    for i in 0..<self!.objects.count {
+                        if self!.objects[i] as PFObject != self!.oldObjects[i] as PFObject {
+                            // Sorted but different objects in the same position.
+                            self!.tableView.reloadData()
+                            break
+                        }
+                    }
+                }
             }
         }
 
