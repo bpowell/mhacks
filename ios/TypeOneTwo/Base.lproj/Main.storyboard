@@ -390,7 +390,7 @@
         <scene sceneID="pDc-NF-bez">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iaC-OP-nds" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Enter" image="first" id="8w1-J0-9e1"/>
+                    <tabBarItem key="tabBarItem" title="Enter" image="EnterIcon" id="8w1-J0-9e1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QKe-N3-VTE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -409,7 +409,7 @@
         <scene sceneID="4Hv-Gj-dto">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1SM-GY-axW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Track" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Track" image="GraphIcon" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b7P-wt-KfO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -426,8 +426,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="EnterIcon" width="25" height="25"/>
+        <image name="GraphIcon" width="25" height="15"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.84999999999999998" blue="0.28333333329999999" alpha="1" colorSpace="deviceRGB"/>
 </document>
