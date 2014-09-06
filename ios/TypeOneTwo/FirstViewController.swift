@@ -11,6 +11,8 @@ import UIKit
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var doseTextField: UITextField!
+    @IBOutlet weak var actingSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var datePicker: UIDatePicker!
 
     override func viewDidLoad() {
         let user = PFUser.currentUser()
@@ -23,4 +25,10 @@ class FirstViewController: UIViewController {
         doseTextField.resignFirstResponder()
     }
 
+    @IBAction func saveButtonTapped(sender: UIButton) {
+        let type = InsulinType.fromRaw(actingSegmentedControl.selectedSegmentIndex)!
+        let dose = (doseTextField.text as NSString).floatValue
+        let date = datePicker.date
+        let insulin = Insulin(type: type, dose: dose, date: date)
+    }
 }
