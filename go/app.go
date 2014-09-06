@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"strings"
 	"io/ioutil"
+	"encoding/json"
+	"log"
 )
 
 func main() {
@@ -57,11 +59,18 @@ func testHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(a.ToJson()))
 }
 
+type User struct {
+	CreatedAt time.Time
+	ObjectId string
+	SessionToken string
+	UpdatedAt time.Time
+	Username string
+}
+
 func test2(w http.ResponseWriter, r *http.Request) {
 	client := &http.Client{
 	}
 
-	//resp, _ := client.Get("https://api.parse.com/1/login?username=andrew&password=andrew")
 	req, _ := http.NewRequest("GET", "https://api.parse.com/1/login?username=andrew&password=andrew", nil)
 	req.Header.Add("X-Parse-Application-Id","5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh")
 	req.Header.Add("X-Parse-REST-API-Key", "U90G1oAVgsLUN2ntGaDFPBIR9SWFIwtsUB8OwgGC")
@@ -69,5 +78,14 @@ func test2(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
+
+
+	var user User
+	err := json.Unmarshal(body, &user)
+	if err != nil {
+		fmt.Println("error:", err)
+	}
+	log.Printf("%+v", user)
+
 	w.Write([]byte(body))
 }
