@@ -71,6 +71,25 @@ type Results struct {
 	Results json.RawMessage
 }
 
+type ParseGlucose struct {
+	Date json.RawMessage
+	Level int
+	CreatedAt time.Time
+	UpdatedAt time.Time
+	ObjectId string
+	ACL json.RawMessage
+}
+
+type ParseDateType struct {
+	Type string
+	Iso time.Time
+}
+
+type ParseACLType struct {
+	Read bool
+	Write bool
+}
+
 func getstuff(user User) []byte{
 	client := &http.Client{
 	}
@@ -86,10 +105,39 @@ func getstuff(user User) []byte{
 	var result Results
 	err := json.Unmarshal(body, &result)
 	if err != nil {
-		fmt.Println("error:", err)
+		log.Println("error:", err)
 	}
 	log.Printf("%+v\n", result)
 	log.Printf("%s\n", string(result.Results))
+
+	log.Printf("====================")
+	var glu []ParseGlucose
+	err = json.Unmarshal(result.Results, &glu)
+	if err != nil {
+		log.Println("error:", err)
+	}
+	log.Printf("%+v\n", glu)
+	log.Printf("====================")
+
+
+	for _, value := range glu {
+		log.Printf("====================")
+		var dateType ParseDateType
+		err = json.Unmarshal(value.Date, &dateType)
+		if err != nil {
+			log.Println("error:", err)
+		}
+		log.Printf("%+v\n", dateType)
+
+		var aclType ParseACLType
+		err = json.Unmarshal(value.ACL, &aclType)
+		if err != nil {
+			log.Println("error:", err)
+		}
+		log.Printf("%+v\n", aclType)
+
+		log.Printf("====================")
+	}
 
 	return ([]byte(body))
 }
