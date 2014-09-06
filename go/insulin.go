@@ -18,12 +18,6 @@ const (
 	long
 )
 
-func insulinJson(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	//user := login("andrew", "andrew")
-	//w.Write([]byte(getInsulinFromParse(user).toJson()))
-}
-
 func insulinGraph(w http.ResponseWriter, r *http.Request) {
 	log.Printf("%s\n", r.Method)
 	if r.Method != "POST" {

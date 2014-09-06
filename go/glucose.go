@@ -45,12 +45,6 @@ func glucoseGraph(w http.ResponseWriter, r *http.Request) {
 	template.Must(template.ParseFiles("graph.html")).ExecuteTemplate(w, "graph.html", &page)
 }
 
-func glucoseJson(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	//user := login("andrew", "andrew")
-	//w.Write([]byte(getGlucoseFromParse(user).toJson()))
-}
-
 func getGlucoseFromParse(token string) ParseGlucoseSlice {
 	client := &http.Client{}
 

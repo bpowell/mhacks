@@ -18,26 +18,8 @@ type GraphPage struct {
 func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/glucoseGraph", glucoseGraph)
-	http.HandleFunc("/glucose.json", glucoseJson)
 	http.HandleFunc("/insulinGraph", insulinGraph)
-	http.HandleFunc("/insulin.json", insulinJson)
-	http.HandleFunc("/post", postHand)
 	http.ListenAndServe(":8080", nil)
-}
-
-func postHand(w http.ResponseWriter, r *http.Request) {
-	log.Printf("%s\n", r.Method)
-	if r.Method != "POST" {
-		http.Error(w, "Error", http.StatusInternalServerError)
-	}
-
-	err := r.ParseForm()
-	if err != nil {
-		log.Printf("bad %s\n", err.Error())
-	}
-
-	s := r.FormValue("sessiontoken")
-	template.Must(template.ParseFiles("insulingraph.html")).ExecuteTemplate(w, "insulingraph.html", &s)
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
