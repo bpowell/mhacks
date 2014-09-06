@@ -99,7 +99,7 @@ type ParseGlucose struct {
 	ACL ParseACLType
 }
 
-func getstuff(user User) []byte{
+func getGlucoseFromParse(user User) []byte{
 	client := &http.Client{
 	}
 
@@ -170,7 +170,8 @@ func getstuff(user User) []byte{
 
 func test2(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	w.Write(getstuff(login("andrew", "andrew")))
+	user := login("andrew", "andrew")
+	w.Write(getGlucoseFromParse(user))
 }
 
 func login(username string, password string) User {
