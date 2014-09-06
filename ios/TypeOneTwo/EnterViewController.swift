@@ -50,19 +50,40 @@ class EnterViewController: UITableViewController {
         return objects.count
     }
 
+    let types = [InsulinType.RapidActing.toRaw(): "Rapid-Acting", InsulinType.LongActing.toRaw(): "Long-Acting"]
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell
-
         let object = objects[indexPath.row] as PFObject
+
         if object.parseClassName == "Glucose" {
-            cell = tableView.dequeueReusableCellWithIdentifier("glucoseCell") as GlucoseCell
+            // Set the level label.
+            let cell = tableView.dequeueReusableCellWithIdentifier("glucoseCell") as GlucoseCell
+            cell.levelLabel.text = String(object["level"] as Int) + " mg/dL"
+
+            // Set the date.
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "M/d/yy h:mm"
+            let dateString = dateFormatter.stringFromDate(object["date"] as NSDate)
+            cell.dateLabel.text = dateString
+            return cell
         } else if object.parseClassName == "Insulin" {
-            cell = tableView.dequeueReusableCellWithIdentifier("insulinCell") as InsulinCell
+            // Set the type label.
+            let cell = tableView.dequeueReusableCellWithIdentifier("insulinCell") as InsulinCell
+            let index = object["type"] as Int
+            let text = types[index]
+            cell.typeLabel.text = text
+
+            // Set the dose label.
+            let dose = object["dose"] as Float
+            cell.doseLabel.text = "\(dose) units"
+            // Set the date.
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "M/d/yy h:mm"
+            let dateString = dateFormatter.stringFromDate(object["date"] as NSDate)
+            cell.dateLabel.text = dateString
+            return cell
         } else {
             fatalError("Unknown parseClassName")
         }
-
-        return cell
     }
 
 }

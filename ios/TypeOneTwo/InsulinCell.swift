@@ -8,4 +8,8 @@
 
 class InsulinCell: UITableViewCell {
 
+    @IBOutlet weak var doseLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+
 }

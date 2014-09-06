@@ -55,6 +55,11 @@
                                         <constraint firstItem="w6T-w3-1Qv" firstAttribute="trailing" secondItem="n5i-pY-Wdp" secondAttribute="trailingMargin" id="z0O-cT-taH"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="w6T-w3-1Qv" id="uSU-pR-McY"/>
+                                    <outlet property="doseLabel" destination="WUJ-6p-18E" id="386-yg-Ka7"/>
+                                    <outlet property="typeLabel" destination="rCs-CL-MaM" id="0NV-PE-k6V"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="glucoseCell" rowHeight="80" id="n2p-vg-oAA" customClass="GlucoseCell" customModule="TypeOneTwo" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -89,6 +94,10 @@
                                         <constraint firstItem="sgP-n4-ydW" firstAttribute="top" secondItem="Rb7-GN-0UQ" secondAttribute="topMargin" id="vuY-2S-a1Q"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="3kJ-oa-CVu" id="pqF-ti-D8Z"/>
+                                    <outlet property="levelLabel" destination="vrp-6W-9aE" id="zfQ-T2-EXR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
