@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  InsulinViewController.swift
 //  TypeOneTwo
 //
 //  Created by andrew on 9/6/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class InsulinViewController: UIViewController {
 
     @IBOutlet weak var doseTextField: UITextField!
     @IBOutlet weak var actingSegmentedControl: UISegmentedControl!

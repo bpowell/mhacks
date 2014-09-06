@@ -14,4 +14,11 @@ class Glucose {
         self.level = level
         self.date = date
     }
+
+    func save() {
+        PFObject(className: "Glucose", dictionary: [
+            "level": level,
+             "date": date]).saveInBackground()
+    }
+
 }
