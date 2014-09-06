@@ -16,6 +16,13 @@ class Insulin {
         self.dose = dose
         self.date = date
     }
+
+    func save() {
+        PFObject(className: "Insulin", dictionary: [
+            "type": type.toRaw(),
+            "dose": dose,
+            "date": date]).saveInBackground()
+    }
 }
 
 enum InsulinType: Int {
