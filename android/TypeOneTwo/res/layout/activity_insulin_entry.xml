@@ -6,6 +6,7 @@
 
     <LinearLayout
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -13,15 +14,47 @@
             android:id="@+id/insulinDose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:maxLength="10"
             android:hint="@string/insulinDose" />
 
-        <ToggleButton
-            android:id="@+id/actingToggle"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="Rapid-acting"
-            android:textOff="Long-acting"
-            android:onClick="onToggleClicked" />
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rapid_acting"
+                android:onClick="onRapidActingClicked" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/long_acting"
+                android:onClick="onLongActingClicked" />
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_picker_button"
+            android:onClick="showDatePicker" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_picker_button"
+            android:onClick="showTimePicker" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:onClick="submitInsulinForm" />
+
 
     </LinearLayout>
 

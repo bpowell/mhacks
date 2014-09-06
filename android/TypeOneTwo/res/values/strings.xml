@@ -16,4 +16,12 @@
 
     <string name="insulinDose">Dose</string>
 
+    <string name="rapid_acting">Rapid acting</string>
+    <string name="long_acting">Long acting</string>
+
+    <string name="date_picker_button">Date</string>
+    <string name="time_picker_button">Time</string>
+
+    <string name="submit">Submit</string>
+
 </resources>
