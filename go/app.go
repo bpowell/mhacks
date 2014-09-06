@@ -1,7 +1,6 @@
 package mhacks
 
 import (
-	"fmt"
 	"net/http"
 )
 
@@ -10,5 +9,5 @@ func init() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "It lives!")
+	http.ServeFile(w, r, "test.html")
 }
