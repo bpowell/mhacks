@@ -23,18 +23,18 @@ func getGlucoseFromParse(user User) ParseGlucoseSlice{
 	client := &http.Client{
 	}
 
-	req, _ := http.NewRequest("GET", "https://api.parse.com/1/classes/Glucose/", nil)
-	req.Header.Add("X-Parse-Application-Id","5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh")
-	req.Header.Add("X-Parse-REST-API-Key", "U90G1oAVgsLUN2ntGaDFPBIR9SWFIwtsUB8OwgGC")
-	req.Header.Add("X-Parse-Session-Token", user.SessionToken)
-	resp, _ := client.Do(req)
-	defer resp.Body.Close()
-	body, _ := ioutil.ReadAll(resp.Body)
+	request, _ := http.NewRequest("GET", "https://api.parse.com/1/classes/Glucose/", nil)
+	request.Header.Add("X-Parse-Application-Id","5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh")
+	request.Header.Add("X-Parse-REST-API-Key", "U90G1oAVgsLUN2ntGaDFPBIR9SWFIwtsUB8OwgGC")
+	request.Header.Add("X-Parse-Session-Token", user.SessionToken)
+	response, _ := client.Do(request)
+	defer response.Body.Close()
+	body, _ := ioutil.ReadAll(response.Body)
 
 	var result Results
 	err := json.Unmarshal(body, &result)
 	if err != nil {
-		log.Println("error:", err)
+		log.Printf("error: %s", err.Error())
 	}
 	log.Printf("%+v\n", result)
 	log.Printf("%s\n", string(result.Results))
@@ -43,7 +43,7 @@ func getGlucoseFromParse(user User) ParseGlucoseSlice{
 	var glu []ParseObjectGlucose
 	err = json.Unmarshal(result.Results, &glu)
 	if err != nil {
-		log.Println("error:", err)
+		log.Printf("error: %s\n", err.Error())
 	}
 	log.Printf("%+v\n", glu)
 	log.Printf("====================")
@@ -52,27 +52,27 @@ func getGlucoseFromParse(user User) ParseGlucoseSlice{
 	var parseGlucose [] ParseGlucose
 	for _, value := range glu {
 		log.Printf("====================")
-		var dateType ParseDateType
-		err = json.Unmarshal(value.Date, &dateType)
+		var date ParseDateType
+		err = json.Unmarshal(value.Date, &date)
 		if err != nil {
-			log.Println("error:", err)
+			log.Printf("error: %s", err.Error())
 		}
-		log.Printf("%+v\n", dateType)
+		log.Printf("%+v\n", date)
 
-		var aclType ParseACLType
-		err = json.Unmarshal(value.ACL, &aclType)
+		var acl ParseACLType
+		err = json.Unmarshal(value.ACL, &acl)
 		if err != nil {
-			log.Println("error:", err)
+			log.Printf("error: %s\n", err.Error())
 		}
-		log.Printf("%+v\n", aclType)
+		log.Printf("%+v\n", acl)
 
 		var glucose ParseGlucose
-		glucose.Date = dateType
+		glucose.Date = date
 		glucose.Level = value.Level
 		glucose.CreatedAt = value.CreatedAt
 		glucose.UpdatedAt = value.UpdatedAt
 		glucose.ObjectId = value.ObjectId
-		glucose.ACL = aclType
+		glucose.ACL = acl
 
 		parseGlucose = append(parseGlucose, glucose)
 
