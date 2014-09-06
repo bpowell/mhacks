@@ -1,6 +1,6 @@
 <html>
         <head>
-                <title>Chart</title>
+	<title>{{.PageTitle}}</title>
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
                 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
                 <script type="text/javascript">
@@ -12,9 +12,9 @@
                 // instantiates the pie chart, passes in the data and
                 // draws it.
                 function drawChart() {
-			var data = google.visualization.arrayToDataTable({{.}});
+			var data = google.visualization.arrayToDataTable({{.Json}});
 			var options = {
-			       title: 'Insulin Dose',
+			       title: '{{.ChartTitle}}',
 			       curveType: 'function',
 			};
 

@@ -9,6 +9,12 @@ import (
 	"time"
 )
 
+type GraphPage struct {
+	PageTitle string
+	Json string
+	ChartTitle string
+}
+
 func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/glucoseGraph", glucoseGraph)
