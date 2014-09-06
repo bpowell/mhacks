@@ -12,11 +12,17 @@ class EnterViewController: UITableViewController {
     var glucoseQueried = false, insulinQueried = false
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         navigationItem.title = "TypeOneTwo"
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         populateArrays()
     }
 
     func populateArrays() {
+        objects.removeAll(keepCapacity: false)
         // After querying both arrays, reload the table view.
         let completion: () -> () = {
             [weak self] in
@@ -46,8 +52,28 @@ class EnterViewController: UITableViewController {
         }
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
+    }
+
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
+            (self.objects[indexPath.row] as PFObject).deleteInBackground()
+            self.objects.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        return [deleteAction]
+    }
+
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     }
 
     let types = [InsulinType.RapidActing.toRaw(): "Rapid-Acting", InsulinType.LongActing.toRaw(): "Long-Acting"]

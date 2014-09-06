@@ -17,11 +17,11 @@ class Insulin {
         self.date = date
     }
 
-    func save() {
+    func saveInBackgroundWithBlock(block: PFBooleanResultBlock) {
         PFObject(className: "Insulin", dictionary: [
             "type": type.toRaw(),
             "dose": dose,
-            "date": date]).saveInBackground()
+            "date": date]).saveInBackgroundWithBlock(block)
     }
 }
 

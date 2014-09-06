@@ -23,6 +23,10 @@ class GlucoseViewController: UIViewController {
         let level = (levelTextField.text as NSString).integerValue
         let date = datePicker.date
         let glucose = Glucose(level: level, date: date)
-        glucose.save()
+        glucose.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+            if succeeded {
+                self.navigationController!.popToRootViewControllerAnimated(true)
+            }
+        }
     }
 }

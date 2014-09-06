@@ -15,10 +15,10 @@ class Glucose {
         self.date = date
     }
 
-    func save() {
+    func saveInBackgroundWithBlock(block: PFBooleanResultBlock!) {
         PFObject(className: "Glucose", dictionary: [
             "level": level,
-             "date": date]).saveInBackground()
+             "date": date]).saveInBackgroundWithBlock(block)
     }
 
 }

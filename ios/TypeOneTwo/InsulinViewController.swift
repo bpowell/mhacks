@@ -27,6 +27,10 @@ class InsulinViewController: UIViewController {
         let dose = (doseTextField.text as NSString).floatValue
         let date = datePicker.date
         let insulin = Insulin(type: type, dose: dose, date: date)
-        insulin.save()
+        insulin.saveInBackgroundWithBlock { (succeeded, error) in
+            if succeeded {
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
+        }
     }
 }
