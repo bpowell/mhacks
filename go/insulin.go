@@ -8,6 +8,7 @@ import (
 	"time"
 	"strings"
 	"fmt"
+	"html/template"
 )
 
 type Acting int
@@ -19,12 +20,26 @@ const (
 
 func insulinJson(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	user := login("andrew", "andrew")
-	w.Write([]byte(getInsulinFromParse(user).toJson()))
+	//user := login("andrew", "andrew")
+	//w.Write([]byte(getInsulinFromParse(user).toJson()))
 }
 
 func insulinGraph(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "insulingraph.html")
+	log.Printf("%s\n", r.Method)
+	if r.Method != "POST" {
+		http.Error(w, "Error lol", http.StatusInternalServerError)
+	}
+
+	err := r.ParseForm()
+	if err != nil {
+		log.Printf("bad %s\n", err.Error())
+	}
+
+	s := r.FormValue("sessiontoken")
+	json := getInsulinFromParse(s).toJson()
+	log.Printf("%s\n", json)
+
+	template.Must(template.ParseFiles("insulingraph.html")).ExecuteTemplate(w, "insulingraph.html", &json)
 }
 
 type ParseObjectInsulin struct {
@@ -44,13 +59,13 @@ type ParseInsulin struct {
 	Type Acting
 }
 
-func getInsulinFromParse(user User) ParseInsulinSlice {
+func getInsulinFromParse(token string) ParseInsulinSlice {
 	client := &http.Client{}
 
 	req, _ := http.NewRequest("GET", "https://api.parse.com/1/classes/Insulin/", nil)
 	req.Header.Add("X-Parse-Application-Id", "5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh")
 	req.Header.Add("X-Parse-REST-API-Key", "U90G1oAVgsLUN2ntGaDFPBIR9SWFIwtsUB8OwgGC")
-	req.Header.Add("X-Parse-Session-Token", user.SessionToken)
+	req.Header.Add("X-Parse-Session-Token", token)
 	resp, _ := client.Do(req)
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
