@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh", clientKey: "HKfQjDzWDzdkHuwV80gk5P13XjTAKAaxSqI7vlk6")
+        PFACL.setDefaultACL(PFACL.ACL(), withAccessForCurrentUser: true)
+        PFUser.enableAutomaticUser()
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         return true
     }

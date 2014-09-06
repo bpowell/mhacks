@@ -9,4 +9,12 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+
+    override func viewDidLoad() {
+        let user = PFUser.currentUser()
+        let object = PFObject(className: "Insulin", dictionary: [
+            "type": "value",
+        ])
+    }
+
 }

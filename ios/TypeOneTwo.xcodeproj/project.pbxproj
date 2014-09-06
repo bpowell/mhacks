@@ -24,6 +24,8 @@
 		49A5A1BC19BAC61300E9CC50 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A5A1BB19BAC61300E9CC50 /* Security.framework */; };
 		49A5A1BE19BAC61800E9CC50 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A5A1BD19BAC61800E9CC50 /* StoreKit.framework */; };
 		49A5A1C019BAC61E00E9CC50 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A5A1BF19BAC61E00E9CC50 /* SystemConfiguration.framework */; };
+		49A5A1C719BACD1500E9CC50 /* Insulin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1C619BACD1500E9CC50 /* Insulin.swift */; };
+		49A5A1CC19BAD30A00E9CC50 /* Glucose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1CB19BAD30A00E9CC50 /* Glucose.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		49A5A1BD19BAC61800E9CC50 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		49A5A1BF19BAC61E00E9CC50 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		49A5A1C119BAC64E00E9CC50 /* TypeOneTwo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TypeOneTwo-Bridging-Header.h"; sourceTree = "<group>"; };
+		49A5A1C619BACD1500E9CC50 /* Insulin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insulin.swift; sourceTree = "<group>"; };
+		49A5A1CB19BAD30A00E9CC50 /* Glucose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glucose.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 				49A5A18919BAC28300E9CC50 /* AppDelegate.swift */,
 				49A5A18B19BAC28300E9CC50 /* FirstViewController.swift */,
 				49A5A18D19BAC28300E9CC50 /* SecondViewController.swift */,
+				49A5A1C819BACD1A00E9CC50 /* Models */,
 				49A5A18F19BAC28300E9CC50 /* Main.storyboard */,
 				49A5A19219BAC28300E9CC50 /* Images.xcassets */,
 				49A5A1AC19BAC58600E9CC50 /* Frameworks */,
@@ -128,6 +133,15 @@
 				49A5A1AD19BAC5B700E9CC50 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49A5A1C819BACD1A00E9CC50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49A5A1CB19BAD30A00E9CC50 /* Glucose.swift */,
+				49A5A1C619BACD1500E9CC50 /* Insulin.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +215,8 @@
 			files = (
 				49A5A18E19BAC28300E9CC50 /* SecondViewController.swift in Sources */,
 				49A5A18A19BAC28300E9CC50 /* AppDelegate.swift in Sources */,
+				49A5A1C719BACD1500E9CC50 /* Insulin.swift in Sources */,
+				49A5A1CC19BAD30A00E9CC50 /* Glucose.swift in Sources */,
 				49A5A18C19BAC28300E9CC50 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
