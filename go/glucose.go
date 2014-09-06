@@ -9,6 +9,16 @@ import (
 	"fmt"
 )
 
+func glucoseGraph(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "glucosegraph.html")
+}
+
+func glucoseJson(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	user := login("andrew", "andrew")
+	w.Write([]byte(getGlucoseFromParse(user).toJson()))
+}
+
 func getGlucoseFromParse(user User) ParseGlucoseSlice{
 	client := &http.Client{
 	}

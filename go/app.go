@@ -10,23 +10,13 @@ import (
 
 func main() {
 	http.HandleFunc("/", handler)
-	http.HandleFunc("/chart", chartHandler)
-	http.HandleFunc("/test", testHandler)
+	http.HandleFunc("/glucoseGraph", glucoseGraph)
+	http.HandleFunc("/glucose.json", glucoseJson)
 	http.ListenAndServe(":8080", nil)
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "test.html")
-}
-
-func chartHandler(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "chart.html")
-}
-
-func testHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	user := login("andrew", "andrew")
-	w.Write([]byte(getGlucoseFromParse(user).toJson()))
 }
 
 type User struct {
