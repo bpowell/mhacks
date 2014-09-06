@@ -29,6 +29,8 @@
 		49A5A1CE19BAE6DE00E9CC50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1CD19BAE6DE00E9CC50 /* Constants.swift */; };
 		49A5A1D019BAF31A00E9CC50 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1CF19BAF31A00E9CC50 /* EnterViewController.swift */; };
 		49A5A1D419BAF3A800E9CC50 /* GlucoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1D319BAF3A800E9CC50 /* GlucoseViewController.swift */; };
+		49A5A1D619BB116800E9CC50 /* InsulinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1D519BB116800E9CC50 /* InsulinCell.swift */; };
+		49A5A1D819BB118D00E9CC50 /* GlucoseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A1D719BB118D00E9CC50 /* GlucoseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		49A5A1CD19BAE6DE00E9CC50 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49A5A1CF19BAF31A00E9CC50 /* EnterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		49A5A1D319BAF3A800E9CC50 /* GlucoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseViewController.swift; sourceTree = "<group>"; };
+		49A5A1D519BB116800E9CC50 /* InsulinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsulinCell.swift; sourceTree = "<group>"; };
+		49A5A1D719BB118D00E9CC50 /* GlucoseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +108,9 @@
 			children = (
 				49A5A18919BAC28300E9CC50 /* AppDelegate.swift */,
 				49A5A1CD19BAE6DE00E9CC50 /* Constants.swift */,
-				49A5A1D119BAF32200E9CC50 /* Enter */,
-				49A5A1D219BAF33400E9CC50 /* Track */,
 				49A5A1C819BACD1A00E9CC50 /* Models */,
+				49A5A1D919BB119500E9CC50 /* Views */,
+				49A5A1D119BAF32200E9CC50 /* Controllers */,
 				49A5A18F19BAC28300E9CC50 /* Main.storyboard */,
 				49A5A19219BAC28300E9CC50 /* Images.xcassets */,
 				49A5A1AC19BAC58600E9CC50 /* Frameworks */,
@@ -151,22 +155,24 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		49A5A1D119BAF32200E9CC50 /* Enter */ = {
+		49A5A1D119BAF32200E9CC50 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				49A5A1CF19BAF31A00E9CC50 /* EnterViewController.swift */,
 				49A5A18B19BAC28300E9CC50 /* InsulinViewController.swift */,
 				49A5A1D319BAF3A800E9CC50 /* GlucoseViewController.swift */,
-			);
-			name = Enter;
-			sourceTree = "<group>";
-		};
-		49A5A1D219BAF33400E9CC50 /* Track */ = {
-			isa = PBXGroup;
-			children = (
 				49A5A18D19BAC28300E9CC50 /* SecondViewController.swift */,
 			);
-			name = Track;
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		49A5A1D919BB119500E9CC50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49A5A1D719BB118D00E9CC50 /* GlucoseCell.swift */,
+				49A5A1D519BB116800E9CC50 /* InsulinCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,9 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A5A1D619BB116800E9CC50 /* InsulinCell.swift in Sources */,
 				49A5A18E19BAC28300E9CC50 /* SecondViewController.swift in Sources */,
 				49A5A1D019BAF31A00E9CC50 /* EnterViewController.swift in Sources */,
 				49A5A18A19BAC28300E9CC50 /* AppDelegate.swift in Sources */,
+				49A5A1D819BB118D00E9CC50 /* GlucoseCell.swift in Sources */,
 				49A5A1C719BACD1500E9CC50 /* Insulin.swift in Sources */,
 				49A5A1CC19BAD30A00E9CC50 /* Glucose.swift in Sources */,
 				49A5A18C19BAC28300E9CC50 /* InsulinViewController.swift in Sources */,
