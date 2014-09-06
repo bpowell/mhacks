@@ -39,7 +39,7 @@ func insulinGraph(w http.ResponseWriter, r *http.Request) {
 	json := getInsulinFromParse(s).toJson()
 	log.Printf("%s\n", json)
 
-	template.Must(template.ParseFiles("insulingraph.html")).ExecuteTemplate(w, "insulingraph.html", &json)
+	template.Must(template.ParseFiles("graph.html")).ExecuteTemplate(w, "graph.html", &json)
 }
 
 type ParseObjectInsulin struct {

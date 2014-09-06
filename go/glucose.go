@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"strings"
 	"time"
+	"text/template"
 )
 
 type ParseObjectGlucose struct {
@@ -26,22 +27,36 @@ type ParseGlucose struct {
 }
 
 func glucoseGraph(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "glucosegraph.html")
+	log.Printf("%s\n", r.Method)
+	if r.Method != "POST" {
+		http.Error(w, "Error lol", http.StatusInternalServerError)
+	}
+
+	err := r.ParseForm()
+	if err != nil {
+		log.Printf("bad %s\n", err.Error())
+	}
+
+	s := r.FormValue("sessiontoken")
+	json := getGlucoseFromParse(s).toJson()
+	log.Printf("%s\n", json)
+
+	template.Must(template.ParseFiles("graph.html")).ExecuteTemplate(w, "graph.html", &json)
 }
 
 func glucoseJson(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	user := login("andrew", "andrew")
-	w.Write([]byte(getGlucoseFromParse(user).toJson()))
+	//user := login("andrew", "andrew")
+	//w.Write([]byte(getGlucoseFromParse(user).toJson()))
 }
 
-func getGlucoseFromParse(user User) ParseGlucoseSlice {
+func getGlucoseFromParse(token string) ParseGlucoseSlice {
 	client := &http.Client{}
 
 	request, _ := http.NewRequest("GET", "https://api.parse.com/1/classes/Glucose/", nil)
 	request.Header.Add("X-Parse-Application-Id", "5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh")
 	request.Header.Add("X-Parse-REST-API-Key", "U90G1oAVgsLUN2ntGaDFPBIR9SWFIwtsUB8OwgGC")
-	request.Header.Add("X-Parse-Session-Token", user.SessionToken)
+	request.Header.Add("X-Parse-Session-Token", token)
 	response, _ := client.Do(request)
 	defer response.Body.Close()
 	body, _ := ioutil.ReadAll(response.Body)
