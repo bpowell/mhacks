@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -29,8 +30,8 @@ func postHand(w http.ResponseWriter, r *http.Request) {
 		log.Printf("bad %s\n", err.Error())
 	}
 
-	content := r.FormValue("sessiontoken")
-	log.Printf("Content: %s\n", content)
+	s := r.FormValue("sessiontoken")
+	template.Must(template.ParseFiles("insulingraph.html")).ExecuteTemplate(w, "insulingraph.html", &s)
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {

@@ -15,6 +15,7 @@
 			$.ajax({
 				url: "insulin.json",
 				dataType: "json",
+        data: "{{.}}",
 				success: function(data) {
 					var data = google.visualization.arrayToDataTable(data);
 					var options = {
