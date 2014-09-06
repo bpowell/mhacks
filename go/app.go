@@ -2,11 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
-	"strings"
 	"time"
 )
 
@@ -14,32 +12,7 @@ func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/chart", chartHandler)
 	http.HandleFunc("/test", testHandler)
-	http.HandleFunc("/test2", test2)
 	http.ListenAndServe(":8080", nil)
-}
-
-type Glucose struct {
-	Date  time.Time
-	Level int
-}
-
-func (g Glucose) ToArray() string {
-	const layout = "Jan 2, 2006 at 3:04pm (MST)"
-	return fmt.Sprintf("[\"%s\", %d]", g.Date.Format(layout), g.Level)
-}
-
-type GlucoseSlice []Glucose
-
-func (g GlucoseSlice) ToJson() string {
-	var q []string
-	q = append(q, "[[\"Date\", \"Level\"]")
-	for _, value := range g {
-		q = append(q, ",")
-		q = append(q, value.ToArray())
-	}
-	q = append(q, "]")
-
-	return strings.Join(q, "")
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -51,13 +24,9 @@ func chartHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func testHandler(w http.ResponseWriter, r *http.Request) {
-	a := make(GlucoseSlice, 5)
-	glucose := Glucose{time.Now(), 100}
-	a[0] = glucose
-	a[1] = glucose
-
 	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte(a.ToJson()))
+	user := login("andrew", "andrew")
+	w.Write([]byte(getGlucoseFromParse(user).toJson()))
 }
 
 type User struct {
@@ -98,12 +67,6 @@ type ParseGlucose struct {
 	UpdatedAt time.Time
 	ObjectId  string
 	ACL       ParseACLType
-}
-
-func test2(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	user := login("andrew", "andrew")
-	w.Write(getGlucoseFromParse(user))
 }
 
 func login(username string, password string) User {

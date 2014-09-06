@@ -5,9 +5,11 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"strings"
+	"fmt"
 )
 
-func getGlucoseFromParse(user User) []byte{
+func getGlucoseFromParse(user User) ParseGlucoseSlice{
 	client := &http.Client{
 	}
 
@@ -73,5 +75,24 @@ func getGlucoseFromParse(user User) []byte{
 	log.Printf("====================")
 	log.Printf("====================")
 
-	return ([]byte(body))
+	return parseGlucose
+}
+
+type ParseGlucoseSlice []ParseGlucose
+
+func (g ParseGlucoseSlice) toJson() string {
+	var q []string
+	q = append(q, "[[\"Date\", \"Level\"]")
+	for _, value := range g {
+		q = append(q, ",")
+		q = append(q, value.toArray())
+	}
+	q = append(q, "]")
+
+	return strings.Join(q, "")
+}
+
+func (g ParseGlucose) toArray() string {
+	const layout = "Jan 2, 2006 at 3:04pm (MST)"
+	return fmt.Sprintf("[\"%s\", %d]", g.Date.Iso.Format(layout), g.Level)
 }
