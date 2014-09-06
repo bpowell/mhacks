@@ -16,9 +16,10 @@ const (
 )
 
 type ParseObjectInsulin struct {
-	Date      json.RawMessage
-	Dose      json.RawMessage
-	Type      json.RawMessage
+	Date json.RawMessage
+	Dose json.RawMessage
+	Type json.RawMessage
+	// unused:
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	ObjectId  string
@@ -26,13 +27,9 @@ type ParseObjectInsulin struct {
 }
 
 type ParseInsulin struct {
-	Date      ParseDateType
-	Dose      float32
-	Type      Acting
-	CreatedAt time.Time
-	UpdatedAt time.Time
-	ObjectId  string
-	ACL       ParseACLType
+	Date ParseDateType
+	Dose float32
+	Type Acting
 }
 
 func getInsulinFromParse(user User) []byte {
@@ -84,21 +81,10 @@ func getInsulinFromParse(user User) []byte {
 			log.Println("error:", err)
 		}
 
-		var aclType ParseACLType
-		err = json.Unmarshal(value.ACL, &aclType)
-		if err != nil {
-			log.Println("error:", err)
-		}
-		log.Printf("%+v\n", aclType)
-
 		var insulin ParseInsulin
 		insulin.Date = dateType
 		insulin.Type = actingType
 		insulin.Dose = dose
-		insulin.CreatedAt = value.CreatedAt
-		insulin.UpdatedAt = value.UpdatedAt
-		insulin.ObjectId = value.ObjectId
-		insulin.ACL = aclType
 
 		parseInsulin = append(parseInsulin, insulin)
 

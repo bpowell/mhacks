@@ -31,16 +31,6 @@ type User struct {
 type Results struct {
 	Results json.RawMessage
 }
-
-type ParseObjectGlucose struct {
-	Date      json.RawMessage
-	Level     int
-	CreatedAt time.Time
-	UpdatedAt time.Time
-	ObjectId  string
-	ACL       json.RawMessage
-}
-
 type ParseDateType struct {
 	Type string
 	Iso  time.Time
@@ -49,15 +39,6 @@ type ParseDateType struct {
 type ParseACLType struct {
 	Read  bool
 	Write bool
-}
-
-type ParseGlucose struct {
-	Date      ParseDateType
-	Level     int
-	CreatedAt time.Time
-	UpdatedAt time.Time
-	ObjectId  string
-	ACL       ParseACLType
 }
 
 func insulinHandler(w http.ResponseWriter, r *http.Request) {

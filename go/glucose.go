@@ -2,12 +2,28 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"strings"
-	"fmt"
+	"time"
 )
+
+type ParseObjectGlucose struct {
+	Date  json.RawMessage
+	Level int
+	// unused:
+	CreatedAt time.Time
+	UpdatedAt time.Time
+	ObjectId  string
+	ACL       json.RawMessage
+}
+
+type ParseGlucose struct {
+	Date  ParseDateType
+	Level int
+}
 
 func glucoseGraph(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "glucosegraph.html")
@@ -19,12 +35,11 @@ func glucoseJson(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(getGlucoseFromParse(user).toJson()))
 }
 
-func getGlucoseFromParse(user User) ParseGlucoseSlice{
-	client := &http.Client{
-	}
+func getGlucoseFromParse(user User) ParseGlucoseSlice {
+	client := &http.Client{}
 
 	request, _ := http.NewRequest("GET", "https://api.parse.com/1/classes/Glucose/", nil)
-	request.Header.Add("X-Parse-Application-Id","5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh")
+	request.Header.Add("X-Parse-Application-Id", "5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh")
 	request.Header.Add("X-Parse-REST-API-Key", "U90G1oAVgsLUN2ntGaDFPBIR9SWFIwtsUB8OwgGC")
 	request.Header.Add("X-Parse-Session-Token", user.SessionToken)
 	response, _ := client.Do(request)
@@ -48,8 +63,7 @@ func getGlucoseFromParse(user User) ParseGlucoseSlice{
 	log.Printf("%+v\n", glu)
 	log.Printf("====================")
 
-
-	var parseGlucose [] ParseGlucose
+	var parseGlucose []ParseGlucose
 	for _, value := range glu {
 		log.Printf("====================")
 		var date ParseDateType
@@ -59,20 +73,9 @@ func getGlucoseFromParse(user User) ParseGlucoseSlice{
 		}
 		log.Printf("%+v\n", date)
 
-		var acl ParseACLType
-		err = json.Unmarshal(value.ACL, &acl)
-		if err != nil {
-			log.Printf("error: %s\n", err.Error())
-		}
-		log.Printf("%+v\n", acl)
-
 		var glucose ParseGlucose
 		glucose.Date = date
 		glucose.Level = value.Level
-		glucose.CreatedAt = value.CreatedAt
-		glucose.UpdatedAt = value.UpdatedAt
-		glucose.ObjectId = value.ObjectId
-		glucose.ACL = acl
 
 		parseGlucose = append(parseGlucose, glucose)
 
