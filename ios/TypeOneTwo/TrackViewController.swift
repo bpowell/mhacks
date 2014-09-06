@@ -23,7 +23,7 @@ class TrackViewController: UIViewController {
         let postLength = "\(postData.length)"
         let request = NSMutableURLRequest()
 
-        request.URL = NSURL(string: "http://162.243.245.232:8081/post")
+        request.URL = NSURL(string: "http://162.243.245.232:8081/insulinGraph")
         request.HTTPMethod = "POST"
         request.setValue(postLength, forHTTPHeaderField: "Content-Length")
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
