@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">MainActivity</string>
     <string name="action_settings">Menu</string>
-    <string name="title_section1">Menu</string>
-    <string name="title_section2">Menu</string>
-    <string name="title_section3">Menu</string>
+    <string name="title_section1">Entry</string>
+    <string name="title_section2">Tracking</string>
 </resources>

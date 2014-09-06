@@ -1,4 +1,4 @@
-package com.appspot.typeonetwo;
+package com.appspot.typeonetwo.models;
 
 import java.util.Date;
 
