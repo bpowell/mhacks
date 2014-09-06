@@ -71,7 +71,7 @@ type Results struct {
 	Results json.RawMessage
 }
 
-type ParseGlucose struct {
+type ParseObjectGlucose struct {
 	Date json.RawMessage
 	Level int
 	CreatedAt time.Time
@@ -111,7 +111,7 @@ func getstuff(user User) []byte{
 	log.Printf("%s\n", string(result.Results))
 
 	log.Printf("====================")
-	var glu []ParseGlucose
+	var glu []ParseObjectGlucose
 	err = json.Unmarshal(result.Results, &glu)
 	if err != nil {
 		log.Println("error:", err)
