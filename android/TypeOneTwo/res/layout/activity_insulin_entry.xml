@@ -16,11 +16,13 @@
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:maxLength="10"
+            android:padding="10dip"
             android:hint="@string/insulinDose" />
 
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dip"
             android:orientation="vertical" >
 
             <RadioButton
@@ -41,20 +43,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/date_picker_button"
+            android:padding="10dip"
             android:onClick="showDatePicker" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/time_picker_button"
+            android:padding="10dip"
             android:onClick="showTimePicker" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/submit"
-            android:onClick="submitInsulinForm" />
-
 
     </LinearLayout>
 

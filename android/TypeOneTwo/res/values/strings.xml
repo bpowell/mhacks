@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MainActivity</string>
-    <string name="action_add">Add</string>
     <string name="title_section1">Entry</string>
     <string name="title_section2">Tracking</string>
 
@@ -23,5 +22,8 @@
     <string name="time_picker_button">Time</string>
 
     <string name="submit">Submit</string>
+
+    <string name="action_add">Add</string>
+    <string name="action_accept">Accept</string>
 
 </resources>
