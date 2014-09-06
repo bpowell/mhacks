@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsulinDataEntryActivity">
+
+    <EditText
+        android:id="@+id/insulinDose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/glucoseChoice" />
+
+    <ToggleButton
+        android:id="@+id/actingToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="Rapid-acting"
+        android:textOff="Long-acting" 
+        android:onClick="onToggleClicked" />
+
+</RelativeLayout>

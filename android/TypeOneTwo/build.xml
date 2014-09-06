@@ -89,4 +89,16 @@
     <!-- version-tag: 1 -->
     <import file="${sdk.dir}/tools/ant/build.xml" />
 
+    <target name="run">
+        <exec executable="adb">
+            <arg value="shell"/>
+            <arg value="am"/>
+            <arg value="start"/>
+            <arg value="-a"/>
+            <arg value="android.intent.action.MAIN"/>
+            <arg value="-n"/>
+            <arg value="com.appspot.typeonetwo.activities/.MainActivity"/>
+        </exec>
+    </target>
+
 </project>

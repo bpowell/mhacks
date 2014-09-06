@@ -1,4 +1,4 @@
-package com.appspot.typeonetwo;
+package com.appspot.typeonetwo.activities;
 
 import java.util.Locale;
 
@@ -6,6 +6,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
@@ -13,8 +14,13 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.util.Log;
+
+import com.appspot.typeonetwo.activities.DataEntryChooserActivity;
 import com.appspot.typeonetwo.fragments.InputFragment;
 import com.appspot.typeonetwo.fragments.TrackingFragment;
+
+import com.parse.*;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 
@@ -29,36 +35,32 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
 
-        // Set up the ViewPager with the sections adapter.
+        // set the viewpager with the sections adapter
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        // When swiping between different sections, select the corresponding
-        // tab. We can also use ActionBar.Tab#select() to do this if we have
-        // a reference to the Tab.
-        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) {
-                actionBar.setSelectedNavigationItem(position);
-            }
-        });
-
-        // For each of the sections in the app, add a tab to the action bar.
+        // for each of the sections in the app, add a tab to the action bar
         for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
-            // Create a tab with text corresponding to the page title defined by
-            // the adapter. Also specify this Activity object, which implements
-            // the TabListener interface, as the callback (listener) for when
-            // this tab is selected.
             actionBar.addTab(
                     actionBar.newTab()
                             .setText(mSectionsPagerAdapter.getPageTitle(i))
                             .setTabListener(this));
         }
+
+        Parse.initialize(this, "5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh", "HKfQjDzWDzdkHuwV80gk5P13XjTAKAaxSqI7vlk6");
+        ParseUser.enableAutomaticUser();
+        ParseACL.setDefaultACL(new ParseACL(), true);
+
+        ParseAnalytics.trackAppOpened(getIntent());
     }
 
+    public void openDataEntryChooser() {
+        Intent intent = new Intent(this, DataEntryChooserActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -69,11 +71,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_add) {
+            openDataEntryChooser();
             return true;
         }
         return super.onOptionsItemSelected(item);

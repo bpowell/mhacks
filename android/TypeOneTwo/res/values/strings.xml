@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MainActivity</string>
-    <string name="action_settings">Menu</string>
+    <string name="action_add">Add</string>
     <string name="title_section1">Entry</string>
     <string name="title_section2">Tracking</string>
+
+    <string name="data_entry">Data Entry</string>
+    <string name="data_entry_chooser">Data Entry Chooser</string>
+
+    <string name="insulin_entry">Insulin</string>
+    <string name="glucose_entry">Glucose</string>
+
+    <string name="insulinChoice">Insulin</string>
+    <string name="glucoseChoice">Glucose</string>
+
+    <string name="insulinDose">Dose</string>
+
 </resources>
