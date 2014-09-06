@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		49A5A18A19BAC28300E9CC50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18919BAC28300E9CC50 /* AppDelegate.swift */; };
 		49A5A18C19BAC28300E9CC50 /* InsulinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18B19BAC28300E9CC50 /* InsulinViewController.swift */; };
-		49A5A18E19BAC28300E9CC50 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18D19BAC28300E9CC50 /* SecondViewController.swift */; };
+		49A5A18E19BAC28300E9CC50 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18D19BAC28300E9CC50 /* TrackViewController.swift */; };
 		49A5A19119BAC28300E9CC50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A5A18F19BAC28300E9CC50 /* Main.storyboard */; };
 		49A5A19319BAC28300E9CC50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A5A19219BAC28300E9CC50 /* Images.xcassets */; };
 		49A5A1A919BAC55C00E9CC50 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A5A1A819BAC55C00E9CC50 /* Parse.framework */; };
@@ -38,7 +38,7 @@
 		49A5A18819BAC28300E9CC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49A5A18919BAC28300E9CC50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49A5A18B19BAC28300E9CC50 /* InsulinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsulinViewController.swift; sourceTree = "<group>"; };
-		49A5A18D19BAC28300E9CC50 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		49A5A18D19BAC28300E9CC50 /* TrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
 		49A5A19019BAC28300E9CC50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49A5A19219BAC28300E9CC50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49A5A1A819BAC55C00E9CC50 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				49A5A1CF19BAF31A00E9CC50 /* EnterViewController.swift */,
 				49A5A18B19BAC28300E9CC50 /* InsulinViewController.swift */,
 				49A5A1D319BAF3A800E9CC50 /* GlucoseViewController.swift */,
-				49A5A18D19BAC28300E9CC50 /* SecondViewController.swift */,
+				49A5A18D19BAC28300E9CC50 /* TrackViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A5A1D619BB116800E9CC50 /* InsulinCell.swift in Sources */,
-				49A5A18E19BAC28300E9CC50 /* SecondViewController.swift in Sources */,
+				49A5A18E19BAC28300E9CC50 /* TrackViewController.swift in Sources */,
 				49A5A1D019BAF31A00E9CC50 /* EnterViewController.swift in Sources */,
 				49A5A18A19BAC28300E9CC50 /* AppDelegate.swift in Sources */,
 				49A5A1D819BB118D00E9CC50 /* GlucoseCell.swift in Sources */,
