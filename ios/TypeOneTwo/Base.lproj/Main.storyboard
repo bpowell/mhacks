@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Enter View Controller-->
@@ -322,26 +323,44 @@
                                 </items>
                             </navigationBar>
                             <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHn-X7-xaB">
-                                <rect key="frame" x="0.0" y="20" width="600" height="220"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="XKI-8M-0hc"/>
-                                </constraints>
                             </webView>
+                            <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUa-TX-wLT">
+                                <rect key="frame" x="0.0" y="316" width="600" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCO-DN-uAQ">
+                                <rect key="frame" x="274" y="285" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="KHq-tK-jxj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="XHn-X7-xaB" secondAttribute="trailing" constant="-16" id="1TI-TV-L6d"/>
+                            <constraint firstItem="xUa-TX-wLT" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.4" id="1v5-V5-HYa"/>
                             <constraint firstItem="ej5-n5-O85" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailing" id="C9p-N0-R4o"/>
-                            <constraint firstItem="XHn-X7-xaB" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" constant="20" id="H2I-Wp-lUc"/>
-                            <constraint firstItem="XHn-X7-xaB" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="HnX-hN-uqy"/>
+                            <constraint firstItem="XHn-X7-xaB" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.4" id="TQ4-4f-WL1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xUa-TX-wLT" secondAttribute="trailing" constant="-16" id="UVU-Ub-9Ti"/>
+                            <constraint firstItem="xUa-TX-wLT" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="UgW-h8-XqP"/>
                             <constraint firstItem="ej5-n5-O85" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="ZQW-8Y-bT4"/>
                             <constraint firstItem="ej5-n5-O85" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="dYc-7R-70W"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="xUa-TX-wLT" secondAttribute="bottom" id="efm-Bx-FWJ"/>
+                            <constraint firstAttribute="centerX" secondItem="tCO-DN-uAQ" secondAttribute="centerX" constant="-0.5" id="hAn-J9-3PN"/>
+                            <constraint firstItem="XHn-X7-xaB" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="iIs-mV-siw"/>
+                            <constraint firstItem="XHn-X7-xaB" firstAttribute="top" secondItem="ej5-n5-O85" secondAttribute="bottom" id="nIQ-1S-jHK"/>
+                            <constraint firstAttribute="centerY" secondItem="tCO-DN-uAQ" secondAttribute="centerY" id="oha-Se-Umy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XHn-X7-xaB" secondAttribute="trailing" constant="-16" id="pdT-oB-CdG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Track" image="second" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="webView" destination="XHn-X7-xaB" id="ACk-k5-Srf"/>
+                        <outlet property="glucoseWebView" destination="xUa-TX-wLT" id="zwr-tA-OJH"/>
+                        <outlet property="insulinWebView" destination="XHn-X7-xaB" id="8qm-RI-PY8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
