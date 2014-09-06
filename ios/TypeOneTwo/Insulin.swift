@@ -7,9 +7,8 @@
 //
 
 class Insulin {
-    // required:
     var type: InsulinType
-    var dose: Float // mg/dL
+    var dose: Float
     var date: NSDate
 
     init(type: InsulinType, dose: Float, date: NSDate) {
@@ -20,6 +19,6 @@ class Insulin {
 }
 
 enum InsulinType: Int {
-    case LongLasting = 0
-    case FastActing = 1
+    case RapidActing = 0
+    case LongActing = 1
 }

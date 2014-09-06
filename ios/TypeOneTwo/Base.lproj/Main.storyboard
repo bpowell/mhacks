@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -16,36 +17,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="158" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQr-d4-Ar2">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items/>
-                            </toolbar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="195" height="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dose" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-Y3-5Ib">
+                                <rect key="frame" x="217" y="89" width="110" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9j2-Ke-fdf">
+                                <rect key="frame" x="0.0" y="163" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="431674686.28114498">
+                                    <!--2014-09-06 05:38:06 +0000-->
+                                </date>
+                            </datePicker>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RWf-8d-MSV">
+                                <rect key="frame" x="207" y="127" width="187" height="29"/>
+                                <segments>
+                                    <segment title="Rapid-Acting"/>
+                                    <segment title="Long-Acting"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUJ-DQ-edl">
+                                <rect key="frame" x="335" y="93" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Insulin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucg-Dk-zQO">
+                                <rect key="frame" x="236" y="40" width="129" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-Ox-JOW">
+                                <rect key="frame" x="279" y="333" width="44" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="iQr-d4-Ar2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="8qp-4k-ywN"/>
-                            <constraint firstItem="iQr-d4-Ar2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="9hT-Pl-9vo"/>
-                            <constraint firstItem="iQr-d4-Ar2" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="GCv-eZ-Lr1"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="Nln-Y3-5Ib" firstAttribute="top" secondItem="Ucg-Dk-zQO" secondAttribute="bottom" constant="20" id="2tl-AX-LdO"/>
+                            <constraint firstItem="tNL-Ox-JOW" firstAttribute="top" secondItem="9j2-Ke-fdf" secondAttribute="bottom" constant="8" id="8su-tc-PJF"/>
+                            <constraint firstItem="9j2-Ke-fdf" firstAttribute="top" secondItem="RWf-8d-MSV" secondAttribute="bottom" constant="8" id="C0Q-KB-Akd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9j2-Ke-fdf" secondAttribute="trailing" constant="-16" id="C5l-9X-Ltv"/>
+                            <constraint firstItem="9j2-Ke-fdf" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="GdX-jq-JuI"/>
+                            <constraint firstAttribute="centerX" secondItem="Nln-Y3-5Ib" secondAttribute="centerX" constant="28.5" id="TtO-81-ZDO"/>
+                            <constraint firstItem="fUJ-DQ-edl" firstAttribute="leading" secondItem="Nln-Y3-5Ib" secondAttribute="trailing" constant="8" id="aYT-qc-1lX"/>
+                            <constraint firstItem="Ucg-Dk-zQO" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="20" id="bI9-la-Tkg"/>
+                            <constraint firstItem="fUJ-DQ-edl" firstAttribute="centerY" secondItem="Nln-Y3-5Ib" secondAttribute="centerY" constant="-0.5" id="gjF-JJ-liL"/>
+                            <constraint firstItem="RWf-8d-MSV" firstAttribute="top" secondItem="Nln-Y3-5Ib" secondAttribute="bottom" constant="8" id="kea-FJ-uS0"/>
+                            <constraint firstAttribute="centerX" secondItem="Ucg-Dk-zQO" secondAttribute="centerX" constant="-0.5" id="lzU-hK-pQl"/>
+                            <constraint firstAttribute="centerX" secondItem="fUJ-DQ-edl" secondAttribute="centerX" constant="-53" id="n6O-gO-gze"/>
+                            <constraint firstAttribute="centerX" secondItem="9j2-Ke-fdf" secondAttribute="centerX" id="t1z-Mm-gIq"/>
+                            <constraint firstAttribute="centerX" secondItem="tNL-Ox-JOW" secondAttribute="centerX" constant="-0.5" id="zOC-tu-umc"/>
+                            <constraint firstAttribute="centerX" secondItem="RWf-8d-MSV" secondAttribute="centerX" constant="-0.5" id="zWj-tT-C0o"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="doseTextField" destination="Nln-Y3-5Ib" id="loK-bH-GIb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

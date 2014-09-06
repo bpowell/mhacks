@@ -10,11 +10,17 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var doseTextField: UITextField!
+
     override func viewDidLoad() {
         let user = PFUser.currentUser()
         let object = PFObject(className: "Insulin", dictionary: [
             "type": "value",
         ])
+    }
+
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        doseTextField.resignFirstResponder()
     }
 
 }
