@@ -14,7 +14,23 @@ func main() {
 	http.HandleFunc("/glucose.json", glucoseJson)
 	http.HandleFunc("/insulinGraph", insulinGraph)
 	http.HandleFunc("/insulin.json", insulinJson)
+	http.HandleFunc("/post", postHand)
 	http.ListenAndServe(":8080", nil)
+}
+
+func postHand(w http.ResponseWriter, r *http.Request) {
+	log.Printf("%s\n", r.Method)
+	if r.Method != "POST" {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	err := r.ParseForm()
+	if err != nil {
+		log.Printf("bad %s\n", err.Error())
+	}
+
+	content := r.FormValue("sessiontoken")
+	log.Printf("Content: %s\n", content)
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
