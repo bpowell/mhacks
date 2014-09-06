@@ -169,14 +169,18 @@ func getstuff(user User) []byte{
 }
 
 func test2(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(getstuff(login("andrew", "andrew")))
+}
+
+func login(username string, password string) User {
 	client := &http.Client{
 	}
 
-	req, _ := http.NewRequest("GET", "https://api.parse.com/1/login?username=andrew&password=andrew", nil)
+	req, _ := http.NewRequest("GET", "https://api.parse.com/1/login?username="+username+"&password="+password, nil)
 	req.Header.Add("X-Parse-Application-Id","5UjI5QS3DY6ilN8r78oZSh19lbVSH7u4RoFgRSEh")
 	req.Header.Add("X-Parse-REST-API-Key", "U90G1oAVgsLUN2ntGaDFPBIR9SWFIwtsUB8OwgGC")
 	resp, _ := client.Do(req)
-	w.Header().Set("Content-Type", "application/json")
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
 
@@ -184,9 +188,10 @@ func test2(w http.ResponseWriter, r *http.Request) {
 	var user User
 	err := json.Unmarshal(body, &user)
 	if err != nil {
-		fmt.Println("error:", err)
+		log.Printf("error: %s\n", err.Error())
 	}
-	log.Printf("%+v", user)
 
-	w.Write(getstuff(user))
+	log.Printf("User information: %+v\n", user)
+
+	return user
 }
