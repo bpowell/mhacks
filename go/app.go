@@ -31,7 +31,8 @@ func testHandler(w http.ResponseWriter, r *http.Request) {
 	a[0] = glucose
 	a[1] = glucose
 
-	var js = fmt.Sprintf("[[\"Date\", \"Level\"],[\"new Date(%s)\",%d]]", glucose.Date, glucose.Level)
+	const layout = "Jan 2, 2006 at 3:04pm (MST)"
+	var js = fmt.Sprintf("[[\"Date\", \"Level\"],[\"%s\",%d]]", glucose.Date.Format(layout), glucose.Level)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.Write([]byte(js))
