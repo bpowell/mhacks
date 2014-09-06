@@ -8,7 +8,7 @@ import (
 	"time"
 	"strings"
 	"fmt"
-	"html/template"
+	"text/template"
 )
 
 type Acting int
@@ -143,5 +143,5 @@ func (g ParseInsulinSlice) toJson() string {
 
 func (g ParseInsulin) toArray() string {
 	const layout = "Jan 2, 2006 at 3:04pm (MST)"
-	return fmt.Sprintf("[\"%s\", %f]", g.Date.Iso.Format(layout), g.Dose)
+	return fmt.Sprintf(`["%s", %f]`, g.Date.Iso.Format(layout), g.Dose)
 }
