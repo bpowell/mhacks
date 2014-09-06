@@ -12,11 +12,6 @@ class EnterViewController: UITableViewController {
     var oldObjects:[AnyObject]!
     var glucoseQueried = false, insulinQueried = false
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "TypeOneTwo"
-    }
-
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         populateArrays()

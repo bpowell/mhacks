@@ -6,7 +6,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Enter View Controller-->
+        <!--TypeOneTwo-->
         <scene sceneID="NLB-i7-wCT">
             <objects>
                 <tableViewController id="ZxU-Pq-REb" customClass="EnterViewController" customModule="TypeOneTwo" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,7 +106,7 @@
                             <outlet property="delegate" destination="ZxU-Pq-REb" id="9hm-m2-cpb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6yQ-jl-oGO">
+                    <navigationItem key="navigationItem" title="TypeOneTwo" id="6yQ-jl-oGO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g8g-TV-I3g">
                             <connections>
                                 <segue destination="51I-iv-4hK" kind="show" id="vwl-YN-89R"/>
@@ -302,9 +302,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfb-IL-ah2" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2980" y="0.0"/>
+            <point key="canvasLocation" x="3792" y="0.0"/>
         </scene>
-        <!--Track-->
+        <!--TypeOneTwo-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="TrackViewController" customModule="TypeOneTwo" customModuleProvider="target" sceneMemberID="viewController">
@@ -355,8 +355,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="XHn-X7-xaB" secondAttribute="trailing" constant="-16" id="pdT-oB-CdG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Track" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="TypeOneTwo" id="1u5-J2-wPx"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="glucoseWebView" destination="xUa-TX-wLT" id="zwr-tA-OJH"/>
@@ -365,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="367"/>
+            <point key="canvasLocation" x="1482" y="367"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -379,7 +379,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="iaC-OP-nds" kind="relationship" relationship="viewControllers" id="bvR-sV-uCD"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="1SM-GY-axW" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -404,6 +404,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMn-F8-RJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-394"/>
+        </scene>
+        <!--Track-->
+        <scene sceneID="4Hv-Gj-dto">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1SM-GY-axW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Track" image="second" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b7P-wt-KfO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="YrC-Du-oF1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTP-Ny-kx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="367"/>
         </scene>
     </scenes>
     <resources>
