@@ -4,18 +4,35 @@
     android:layout_height="match_parent"
     tools:context=".InsulinDataEntryActivity">
 
-    <EditText
-        android:id="@+id/insulinDose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/glucoseChoice" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ToggleButton
-        android:id="@+id/actingToggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOn="Rapid-acting"
-        android:textOff="Long-acting" 
-        android:onClick="onToggleClicked" />
+        <EditText
+            android:id="@+id/glucoseLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:maxLength="10"
+            android:padding="10dip"
+            android:hint="@string/glucose_level" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_picker_button"
+            android:padding="10dip"
+            android:onClick="showDatePicker" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_picker_button"
+            android:padding="10dip"
+            android:onClick="showTimePicker" />
+
+    </LinearLayout>
 
 </RelativeLayout>
