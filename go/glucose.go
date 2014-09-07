@@ -39,7 +39,7 @@ func glucoseGraph(w http.ResponseWriter, r *http.Request) {
 
 	s := r.FormValue("sessiontoken")
 	json := getGlucoseFromParse(s).toJson()
-	page := GraphPage{"Glucose", json, "Glucode Level (mg/dL)"}
+	page := GraphPage{"Glucose", json, "Glucose  Level (mg/dL)"}
 	log.Printf("%s\n", json)
 
 	template.Must(template.ParseFiles("graph.html")).ExecuteTemplate(w, "graph.html", &page)

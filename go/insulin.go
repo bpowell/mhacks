@@ -32,7 +32,7 @@ func insulinGraph(w http.ResponseWriter, r *http.Request) {
 	s := r.FormValue("sessiontoken")
 	json := getInsulinFromParse(s).toJson()
 	log.Printf("%s\n", json)
-	page := GraphPage{"Insulin", json, "Insulin dose (units)"}
+	page := GraphPage{"Insulin", json, "Insulin Dose (units)"}
 
 	template.Must(template.ParseFiles("graph.html")).ExecuteTemplate(w, "graph.html", &page)
 }
