@@ -18,8 +18,8 @@ class Insulin {
     }
 
     convenience init(parseObject: PFObject) {
-        let type = parseObject["level"] as Int
-        let dose = parseObject["level"] as Float
+        let type = parseObject["type"] as Int
+        let dose = parseObject["dose"] as Float
         let date = parseObject["date"] as NSDate
         self.init(type: InsulinType.fromRaw(type)!, dose: dose, date: date)
     }
