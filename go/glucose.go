@@ -132,6 +132,10 @@ func getGlucoseFromParse(token string) ParseGlucoseSlice {
 type ParseGlucoseSlice []ParseGlucose
 
 func (g ParseGlucoseSlice) toJson() string {
+	if len(g)==0 {
+		return ""
+	}
+
 	var q []string
 	q = append(q, "[[\"Date\", \"Level\"]")
 	for _, value := range g {

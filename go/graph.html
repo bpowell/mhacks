@@ -12,7 +12,10 @@
                 // instantiates the pie chart, passes in the data and
                 // draws it.
                 function drawChart() {
-			var data = google.visualization.arrayToDataTable({{.Json}});
+			var json = {{.Json}};
+			if(json==="") return;
+
+			var data = google.visualization.arrayToDataTable(json);
 			var options = {
 			       title: '{{.ChartTitle}}',
 			       curveType: 'function',

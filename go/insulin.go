@@ -125,6 +125,10 @@ func getInsulinFromParse(token string) ParseInsulinSlice {
 type ParseInsulinSlice []ParseInsulin
 
 func (g ParseInsulinSlice) toJson() string {
+	if len(g)==0 {
+		return ""
+	}
+
 	var q []string
 	q = append(q, "[[\"Date\", \"Dose\"]")
 	for _, value := range g {
