@@ -10,5 +10,6 @@ class GlucoseCell: UITableViewCell {
 
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var heartImage: UIImageView!
 
 }

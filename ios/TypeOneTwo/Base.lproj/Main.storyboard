@@ -85,18 +85,24 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="HeartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mxc-M7-RCX">
+                                            <rect key="frame" x="8" y="55" width="12" height="11"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="sgP-n4-ydW" firstAttribute="leading" secondItem="Rb7-GN-0UQ" secondAttribute="leadingMargin" id="EaD-H7-7cP"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mxc-M7-RCX" secondAttribute="bottom" constant="5" id="gx0-t1-59L"/>
                                         <constraint firstItem="vrp-6W-9aE" firstAttribute="centerY" secondItem="sgP-n4-ydW" secondAttribute="centerY" id="iZZ-bl-46a"/>
                                         <constraint firstItem="3kJ-oa-CVu" firstAttribute="trailing" secondItem="Rb7-GN-0UQ" secondAttribute="trailingMargin" id="lGg-5a-C9c"/>
                                         <constraint firstItem="vrp-6W-9aE" firstAttribute="trailing" secondItem="Rb7-GN-0UQ" secondAttribute="trailingMargin" id="mVE-pL-U0r"/>
+                                        <constraint firstItem="mxc-M7-RCX" firstAttribute="leading" secondItem="Rb7-GN-0UQ" secondAttribute="leadingMargin" id="mcf-yP-A3x"/>
                                         <constraint firstItem="3kJ-oa-CVu" firstAttribute="bottom" secondItem="Rb7-GN-0UQ" secondAttribute="bottomMargin" id="rO1-0t-oVl"/>
                                         <constraint firstItem="sgP-n4-ydW" firstAttribute="top" secondItem="Rb7-GN-0UQ" secondAttribute="topMargin" id="vuY-2S-a1Q"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="3kJ-oa-CVu" id="pqF-ti-D8Z"/>
+                                    <outlet property="heartImage" destination="mxc-M7-RCX" id="f2b-G8-S7x"/>
                                     <outlet property="levelLabel" destination="vrp-6W-9aE" id="zfQ-T2-EXR"/>
                                 </connections>
                             </tableViewCell>
@@ -184,6 +190,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dose" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-Y3-5Ib">
                                 <rect key="frame" x="207" y="89" width="142" height="30"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
@@ -201,7 +208,7 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-Ox-JOW">
-                                <rect key="frame" x="279" y="503" width="45" height="40"/>
+                                <rect key="frame" x="278" y="481" width="45" height="40"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -225,13 +232,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9j2-Ke-fdf" secondAttribute="trailing" constant="-16" id="C5l-9X-Ltv"/>
                             <constraint firstItem="9j2-Ke-fdf" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="GdX-jq-JuI"/>
                             <constraint firstItem="fUJ-DQ-edl" firstAttribute="trailing" secondItem="RWf-8d-MSV" secondAttribute="trailing" id="Wtb-qF-qNp"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="tNL-Ox-JOW" secondAttribute="bottom" constant="8" id="ZYn-r4-xGx"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="tNL-Ox-JOW" secondAttribute="bottom" constant="30" id="ZYn-r4-xGx"/>
                             <constraint firstItem="fUJ-DQ-edl" firstAttribute="leading" secondItem="Nln-Y3-5Ib" secondAttribute="trailing" constant="8" id="aYT-qc-1lX"/>
                             <constraint firstItem="fUJ-DQ-edl" firstAttribute="centerY" secondItem="Nln-Y3-5Ib" secondAttribute="centerY" constant="-0.5" id="gjF-JJ-liL"/>
                             <constraint firstItem="RWf-8d-MSV" firstAttribute="top" secondItem="Nln-Y3-5Ib" secondAttribute="bottom" constant="8" id="kea-FJ-uS0"/>
                             <constraint firstAttribute="centerX" secondItem="9j2-Ke-fdf" secondAttribute="centerX" id="t1z-Mm-gIq"/>
                             <constraint firstItem="Nln-Y3-5Ib" firstAttribute="leading" secondItem="RWf-8d-MSV" secondAttribute="leading" id="yto-hJ-c5a"/>
-                            <constraint firstAttribute="centerX" secondItem="tNL-Ox-JOW" secondAttribute="centerX" constant="-1.5" id="zOC-tu-umc"/>
+                            <constraint firstAttribute="centerX" secondItem="tNL-Ox-JOW" secondAttribute="centerX" id="zOC-tu-umc"/>
                             <constraint firstAttribute="centerX" secondItem="RWf-8d-MSV" secondAttribute="centerX" constant="-0.5" id="zWj-tT-C0o"/>
                         </constraints>
                     </view>
@@ -259,6 +266,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Level" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="brT-0c-50o">
                                 <rect key="frame" x="224" y="89" width="95" height="30"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
@@ -275,7 +283,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmQ-em-9aw">
-                                <rect key="frame" x="278" y="503" width="45" height="40"/>
+                                <rect key="frame" x="278" y="481" width="45" height="40"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,8 +298,8 @@
                         <constraints>
                             <constraint firstItem="3rg-UP-abf" firstAttribute="leading" secondItem="brT-0c-50o" secondAttribute="trailing" constant="8" id="3AV-HQ-UQA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VYT-9d-Wvn" secondAttribute="trailing" constant="-16" id="4ZM-dk-bTb"/>
-                            <constraint firstAttribute="centerX" secondItem="WmQ-em-9aw" secondAttribute="centerX" constant="-0.5" id="81h-JO-uUG"/>
-                            <constraint firstItem="wKh-PE-tUL" firstAttribute="top" secondItem="WmQ-em-9aw" secondAttribute="bottom" constant="8" id="CbC-hJ-UyC"/>
+                            <constraint firstAttribute="centerX" secondItem="WmQ-em-9aw" secondAttribute="centerX" id="81h-JO-uUG"/>
+                            <constraint firstItem="wKh-PE-tUL" firstAttribute="top" secondItem="WmQ-em-9aw" secondAttribute="bottom" constant="30" id="CbC-hJ-UyC"/>
                             <constraint firstItem="3rg-UP-abf" firstAttribute="centerY" secondItem="brT-0c-50o" secondAttribute="centerY" constant="-0.5" id="EtW-SW-0Kv"/>
                             <constraint firstItem="brT-0c-50o" firstAttribute="top" secondItem="mo8-oM-gk9" secondAttribute="bottom" constant="25" id="doE-4g-Taw"/>
                             <constraint firstAttribute="centerX" secondItem="VYT-9d-Wvn" secondAttribute="centerX" id="hAE-R4-SLs"/>
@@ -329,15 +337,15 @@
                                 </items>
                             </navigationBar>
                             <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHn-X7-xaB">
-                                <rect key="frame" x="0.0" y="44" width="600" height="240"/>
+                                <rect key="frame" x="0.0" y="59" width="600" height="225"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUa-TX-wLT">
-                                <rect key="frame" x="0.0" y="316" width="600" height="240"/>
+                                <rect key="frame" x="0.0" y="321" width="600" height="225"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCO-DN-uAQ">
-                                <rect key="frame" x="269" y="282" width="63" height="37"/>
+                                <rect key="frame" x="269" y="286" width="63" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Refresh"/>
                                 <connections>
@@ -347,18 +355,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xUa-TX-wLT" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.4" id="1v5-V5-HYa"/>
+                            <constraint firstItem="xUa-TX-wLT" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.375" id="1v5-V5-HYa"/>
                             <constraint firstItem="ej5-n5-O85" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailing" id="C9p-N0-R4o"/>
-                            <constraint firstItem="XHn-X7-xaB" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.4" id="TQ4-4f-WL1"/>
+                            <constraint firstItem="XHn-X7-xaB" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.375" id="TQ4-4f-WL1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xUa-TX-wLT" secondAttribute="trailing" constant="-16" id="UVU-Ub-9Ti"/>
                             <constraint firstItem="xUa-TX-wLT" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="UgW-h8-XqP"/>
                             <constraint firstItem="ej5-n5-O85" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="ZQW-8Y-bT4"/>
                             <constraint firstItem="ej5-n5-O85" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="dYc-7R-70W"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="xUa-TX-wLT" secondAttribute="bottom" id="efm-Bx-FWJ"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="xUa-TX-wLT" secondAttribute="bottom" constant="10" id="efm-Bx-FWJ"/>
                             <constraint firstAttribute="centerX" secondItem="tCO-DN-uAQ" secondAttribute="centerX" constant="-0.5" id="hAn-J9-3PN"/>
                             <constraint firstItem="XHn-X7-xaB" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="iIs-mV-siw"/>
-                            <constraint firstItem="XHn-X7-xaB" firstAttribute="top" secondItem="ej5-n5-O85" secondAttribute="bottom" id="nIQ-1S-jHK"/>
-                            <constraint firstAttribute="centerY" secondItem="tCO-DN-uAQ" secondAttribute="centerY" id="oha-Se-Umy"/>
+                            <constraint firstItem="XHn-X7-xaB" firstAttribute="top" secondItem="ej5-n5-O85" secondAttribute="bottom" constant="15" id="nIQ-1S-jHK"/>
+                            <constraint firstAttribute="centerY" secondItem="tCO-DN-uAQ" secondAttribute="centerY" constant="-4.5" id="oha-Se-Umy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XHn-X7-xaB" secondAttribute="trailing" constant="-16" id="pdT-oB-CdG"/>
                         </constraints>
                     </view>
@@ -436,6 +444,7 @@
     <resources>
         <image name="EnterIcon" width="25" height="25"/>
         <image name="GraphIcon" width="25" height="15"/>
+        <image name="HeartIcon" width="12" height="11"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="deviceRGB"/>
 </document>

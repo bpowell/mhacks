@@ -22,7 +22,7 @@ class DividerViewController: UIViewController {
         let originalColor = view.backgroundColor
         view.backgroundColor = UIColor.whiteColor()
 
-        UIView.animateWithDuration(1.0, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animateWithDuration(0.6, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.insulinButton.frame.origin.x -= self.offset
             self.glucoseButton.frame.origin.x -= self.offset
             self.view.backgroundColor = originalColor

@@ -27,12 +27,6 @@ class Glucose {
              "date": date]).saveInBackground()
     }
 
-    func delete() {
-        PFObject(className: "Glucose", dictionary: [
-            "level": level,
-             "date": date]).deleteInBackground()
-    }
-
     func saveInBackgroundWithBlock(block: PFBooleanResultBlock!) {
         PFObject(className: "Glucose", dictionary: [
             "level": level,

@@ -67,19 +67,42 @@ class TrackViewController: UIViewController, UIWebViewDelegate {
     }
 
     var finished = 0
+    var firstFinish = true
     func webViewDidFinishLoad(webView: UIWebView) {
         if (finished++ > 0) {
-            SVProgressHUD.dismiss()
-            UIView.animateWithDuration(0.4) {
-                self.refreshButton.alpha = 1
-                self.insulinWebView.alpha = 1
-                self.glucoseWebView.alpha = 1
+            if (firstFinish) {
+                firstFinish = false
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+                    SVProgressHUD.dismiss()
+                    UIView.animateWithDuration(0.4) {
+                        self.refreshButton.alpha = 1
+                        self.insulinWebView.alpha = 1
+                        self.glucoseWebView.alpha = 1
+                    }
+                }
+            } else {
+                SVProgressHUD.dismiss()
+                UIView.animateWithDuration(0.4) {
+                    self.refreshButton.alpha = 1
+                    self.insulinWebView.alpha = 1
+                    self.glucoseWebView.alpha = 1
+                }
             }
         }
     }
 
     func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
         finished = 1
+        SVProgressHUD.dismiss()
+        UIView.animateWithDuration(0.4) {
+            self.refreshButton.alpha = 1
+            self.insulinWebView.alpha = 1
+            self.glucoseWebView.alpha = 1
+        }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         SVProgressHUD.dismiss()
         UIView.animateWithDuration(0.4) {
             self.refreshButton.alpha = 1

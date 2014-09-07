@@ -22,9 +22,13 @@ class EnterViewController: UITableViewController {
             if !success {
                 return
             }
-
-            self.syncWithHealthKit()
         }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didEnterForeground",
+            name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+
+    func didEnterForeground() {
+        syncWithHealthKit()
     }
 
     func syncWithHealthKit() {
@@ -56,14 +60,17 @@ class EnterViewController: UITableViewController {
             if objects.count == 0 {
                 let unit = HKUnit(fromString: "mg/dL")
                 let level = sample.quantity.doubleValueForUnit(unit)
-                let glucose = Glucose(level: level, date: sample.endDate)
-                glucose.save()
+                PFObject(className: "Glucose", dictionary: [
+                    "level": level,
+                    "hk": true,
+                    "date": sample.endDate]).saveInBackground()
             }
         }
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        syncWithHealthKit()
         populateArrays()
     }
 
@@ -135,15 +142,7 @@ class EnterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
-            let object = self.objects[indexPath.row] as PFObject
-            switch object.parseClassName {
-            case "Glucose":
-                Glucose(parseObject: object).delete()
-            case "Insulin":
-                Insulin(parseObject: object).delete()
-            default:
-                fatalError("unknown parseClassName")
-            }
+            (self.objects[indexPath.row] as PFObject).deleteInBackground()
             self.objects.removeAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
@@ -160,6 +159,7 @@ class EnterViewController: UITableViewController {
         if object.parseClassName == "Glucose" {
             // Set the level label.
             let cell = tableView.dequeueReusableCellWithIdentifier("glucoseCell") as GlucoseCell
+            cell.heartImage.hidden = true
             cell.levelLabel.text = String(object["level"] as Int) + " mg/dL"
 
             // Set the date.
@@ -167,6 +167,13 @@ class EnterViewController: UITableViewController {
             dateFormatter.dateFormat = "M/d/yy h:mm"
             let dateString = dateFormatter.stringFromDate(object["date"] as NSDate)
             cell.dateLabel.text = dateString
+
+
+            // If from HealthKit, unhide the heart icon.
+            if object["hk"] != nil {
+                cell.heartImage.hidden = false
+            }
+
             return cell
         } else if object.parseClassName == "Insulin" {
             // Set the type label.
