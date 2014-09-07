@@ -21,26 +21,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insulin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-mK-WXQ">
-                                            <rect key="frame" x="8" y="8" width="52" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <rect key="frame" x="8" y="8" width="52" height="24"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.7 units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUJ-6p-18E">
-                                            <rect key="frame" x="516" y="8" width="76" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="516" y="7" width="76" height="24"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9/6/14 5:59" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6T-w3-1Qv">
-                                            <rect key="frame" x="518" y="54" width="74" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <rect key="frame" x="517" y="51" width="75" height="20"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long-Acting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCs-CL-MaM">
-                                            <rect key="frame" x="8" y="53" width="85" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="8" y="50" width="85" height="21"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -49,7 +49,7 @@
                                         <constraint firstItem="WUJ-6p-18E" firstAttribute="trailing" secondItem="n5i-pY-Wdp" secondAttribute="trailingMargin" id="9Ro-sb-LY8"/>
                                         <constraint firstItem="Zbk-mK-WXQ" firstAttribute="leading" secondItem="n5i-pY-Wdp" secondAttribute="leadingMargin" id="C2Q-C7-b2a"/>
                                         <constraint firstItem="rCs-CL-MaM" firstAttribute="leading" secondItem="n5i-pY-Wdp" secondAttribute="leadingMargin" id="Tnw-uP-qM4"/>
-                                        <constraint firstItem="WUJ-6p-18E" firstAttribute="centerY" secondItem="Zbk-mK-WXQ" secondAttribute="centerY" id="fnm-fd-Tgs"/>
+                                        <constraint firstItem="WUJ-6p-18E" firstAttribute="centerY" secondItem="Zbk-mK-WXQ" secondAttribute="centerY" constant="-1.5" id="fnm-fd-Tgs"/>
                                         <constraint firstItem="rCs-CL-MaM" firstAttribute="bottom" secondItem="n5i-pY-Wdp" secondAttribute="bottomMargin" id="mOg-BG-yFZ"/>
                                         <constraint firstItem="Zbk-mK-WXQ" firstAttribute="top" secondItem="n5i-pY-Wdp" secondAttribute="topMargin" id="uZV-Vc-SdP"/>
                                         <constraint firstItem="w6T-w3-1Qv" firstAttribute="bottom" secondItem="n5i-pY-Wdp" secondAttribute="bottomMargin" id="uzC-Tf-aJN"/>
@@ -68,20 +68,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glucose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgP-n4-ydW">
-                                            <rect key="frame" x="8" y="8" width="65" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <rect key="frame" x="8" y="8" width="64" height="24"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="79.3 mg/dL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrp-6W-9aE">
-                                            <rect key="frame" x="504" y="8" width="88" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="502" y="8" width="90" height="24"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9/6/14 6:02" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kJ-oa-CVu">
-                                            <rect key="frame" x="518" y="54" width="74" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <rect key="frame" x="517" y="51" width="75" height="20"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="1482" y="-395"/>
         </scene>
-        <!--View Controller-->
+        <!--Divider View Controller-->
         <scene sceneID="w87-F7-9Ya">
             <objects>
-                <viewController id="51I-iv-4hK" sceneMemberID="viewController">
+                <viewController id="51I-iv-4hK" customClass="DividerViewController" customModule="TypeOneTwo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eba-07-SPX"/>
                         <viewControllerLayoutGuide type="bottom" id="q5v-bk-ind"/>
@@ -131,10 +131,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8z-8N-8ds">
-                                <rect key="frame" x="258" y="248" width="84" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="240" y="209" width="121" height="67"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
                                 <state key="normal" title="Insulin">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -142,10 +142,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osH-gB-nGZ">
-                                <rect key="frame" x="246" y="304" width="109" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="227" y="325" width="150" height="67"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
                                 <state key="normal" title="Glucose">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -153,14 +153,18 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="d8z-8N-8ds" firstAttribute="centerX" secondItem="osH-gB-nGZ" secondAttribute="centerX" id="D8P-Id-BQZ"/>
-                            <constraint firstAttribute="centerY" secondItem="osH-gB-nGZ" secondAttribute="centerY" constant="-28" id="E9g-yP-cxa"/>
-                            <constraint firstAttribute="centerY" secondItem="d8z-8N-8ds" secondAttribute="centerY" constant="28" id="Pmo-Vf-CMI"/>
+                            <constraint firstItem="d8z-8N-8ds" firstAttribute="centerX" secondItem="osH-gB-nGZ" secondAttribute="centerX" constant="-1" id="D8P-Id-BQZ"/>
+                            <constraint firstAttribute="centerY" secondItem="osH-gB-nGZ" secondAttribute="centerY" constant="-58.5" id="E9g-yP-cxa"/>
+                            <constraint firstAttribute="centerY" secondItem="d8z-8N-8ds" secondAttribute="centerY" constant="57.5" id="Pmo-Vf-CMI"/>
                             <constraint firstAttribute="centerX" secondItem="d8z-8N-8ds" secondAttribute="centerX" id="ytm-Vl-aot"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="glucoseButton" destination="osH-gB-nGZ" id="DqP-wC-lcz"/>
+                        <outlet property="insulinButton" destination="d8z-8N-8ds" id="nuT-sh-OTc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfP-Lr-wcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,7 +184,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dose" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-Y3-5Ib">
                                 <rect key="frame" x="207" y="89" width="142" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9j2-Ke-fdf">
@@ -197,9 +201,10 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-Ox-JOW">
-                                <rect key="frame" x="279" y="507" width="44" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="279" y="503" width="45" height="40"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Save">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -207,13 +212,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUJ-DQ-edl">
-                                <rect key="frame" x="357" y="93" width="37" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="357" y="92" width="37" height="24"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.69803921570000005" green="0.92156862750000001" blue="0.94901960780000005" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="Nln-Y3-5Ib" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="25" id="8NY-ow-2n5"/>
                             <constraint firstItem="9j2-Ke-fdf" firstAttribute="top" secondItem="RWf-8d-MSV" secondAttribute="bottom" constant="8" id="C0Q-KB-Akd"/>
@@ -226,7 +231,7 @@
                             <constraint firstItem="RWf-8d-MSV" firstAttribute="top" secondItem="Nln-Y3-5Ib" secondAttribute="bottom" constant="8" id="kea-FJ-uS0"/>
                             <constraint firstAttribute="centerX" secondItem="9j2-Ke-fdf" secondAttribute="centerX" id="t1z-Mm-gIq"/>
                             <constraint firstItem="Nln-Y3-5Ib" firstAttribute="leading" secondItem="RWf-8d-MSV" secondAttribute="leading" id="yto-hJ-c5a"/>
-                            <constraint firstAttribute="centerX" secondItem="tNL-Ox-JOW" secondAttribute="centerX" constant="-0.5" id="zOC-tu-umc"/>
+                            <constraint firstAttribute="centerX" secondItem="tNL-Ox-JOW" secondAttribute="centerX" constant="-1.5" id="zOC-tu-umc"/>
                             <constraint firstAttribute="centerX" secondItem="RWf-8d-MSV" secondAttribute="centerX" constant="-0.5" id="zWj-tT-C0o"/>
                         </constraints>
                     </view>
@@ -253,8 +258,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Level" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="brT-0c-50o">
-                                <rect key="frame" x="223" y="89" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="224" y="89" width="95" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VYT-9d-Wvn">
@@ -264,15 +269,16 @@
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg/dL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rg-UP-abf">
-                                <rect key="frame" x="328" y="93" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="327" y="92" width="52" height="24"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmQ-em-9aw">
-                                <rect key="frame" x="278" y="507" width="44" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="278" y="503" width="45" height="40"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Save">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -280,7 +286,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.69803921570000005" green="0.92156862750000001" blue="0.94901960780000005" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="3rg-UP-abf" firstAttribute="leading" secondItem="brT-0c-50o" secondAttribute="trailing" constant="8" id="3AV-HQ-UQA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VYT-9d-Wvn" secondAttribute="trailing" constant="-16" id="4ZM-dk-bTb"/>
@@ -302,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfb-IL-ah2" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3792" y="0.0"/>
+            <point key="canvasLocation" x="2980" y="-20"/>
         </scene>
         <!--TypeOneTwo-->
         <scene sceneID="wg7-f3-ORb">
@@ -331,7 +337,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCO-DN-uAQ">
-                                <rect key="frame" x="274" y="285" width="53" height="30"/>
+                                <rect key="frame" x="275" y="284" width="51" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Refresh"/>
                                 <connections>
                                     <action selector="refreshButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="KHq-tK-jxj"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493B8EAF19BC548A00CF2E62 /* DividerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B8EAE19BC548A00CF2E62 /* DividerViewController.swift */; };
 		499DBDD019BBEEF800634B8F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499DBDCF19BBEEF800634B8F /* HealthKit.framework */; };
 		49A5A18A19BAC28300E9CC50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18919BAC28300E9CC50 /* AppDelegate.swift */; };
 		49A5A18C19BAC28300E9CC50 /* InsulinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18B19BAC28300E9CC50 /* InsulinViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493B8EAE19BC548A00CF2E62 /* DividerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerViewController.swift; sourceTree = "<group>"; };
 		499DBDCF19BBEEF800634B8F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		499DBDD119BBEF6500634B8F /* TypeOneTwo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TypeOneTwo.entitlements; sourceTree = "<group>"; };
 		49A5A18419BAC28300E9CC50 /* TypeOneTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeOneTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +95,6 @@
 		49A5A17B19BAC28300E9CC50 = {
 			isa = PBXGroup;
 			children = (
-				499DBDCF19BBEEF800634B8F /* HealthKit.framework */,
 				49A5A18619BAC28300E9CC50 /* TypeOneTwo */,
 				49A5A18519BAC28300E9CC50 /* Products */,
 				49A5A1C119BAC64E00E9CC50 /* TypeOneTwo-Bridging-Header.h */,
@@ -136,6 +137,7 @@
 		49A5A1AC19BAC58600E9CC50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				499DBDCF19BBEEF800634B8F /* HealthKit.framework */,
 				49A5A1A819BAC55C00E9CC50 /* Parse.framework */,
 				49A5A1AA19BAC56400E9CC50 /* Bolts.framework */,
 				49A5A1BF19BAC61E00E9CC50 /* SystemConfiguration.framework */,
@@ -164,6 +166,7 @@
 		49A5A1D119BAF32200E9CC50 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				493B8EAE19BC548A00CF2E62 /* DividerViewController.swift */,
 				49A5A1CF19BAF31A00E9CC50 /* EnterViewController.swift */,
 				49A5A18B19BAC28300E9CC50 /* InsulinViewController.swift */,
 				49A5A1D319BAF3A800E9CC50 /* GlucoseViewController.swift */,
@@ -265,6 +268,7 @@
 				49A5A1CC19BAD30A00E9CC50 /* Glucose.swift in Sources */,
 				49A5A18C19BAC28300E9CC50 /* InsulinViewController.swift in Sources */,
 				49A5A1CE19BAE6DE00E9CC50 /* Constants.swift in Sources */,
+				493B8EAF19BC548A00CF2E62 /* DividerViewController.swift in Sources */,
 				49A5A1D419BAF3A800E9CC50 /* GlucoseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

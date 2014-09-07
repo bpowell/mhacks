@@ -13,6 +13,12 @@ class GlucoseViewController: UIViewController {
 
     override func viewDidLoad() {
         navigationItem.title = "Enter Glucose"
+        let originalColor = view.backgroundColor
+        view.backgroundColor = UIColor(red: 224.0/255.0, green: 247.0/255.0, blue: 250.0/255.0, alpha: 1.0)
+
+        UIView.animateWithDuration(1.0, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.view.backgroundColor = originalColor
+        }, completion: nil)
     }
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
