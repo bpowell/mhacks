@@ -7,12 +7,18 @@
 //
 
 class Glucose {
-    var level: Int // mg/dL
+    var level: Double // mg/dL
     var date: NSDate
 
-    init(level: Int, date: NSDate) {
+    init(level: Double, date: NSDate) {
         self.level = level
         self.date = date
+    }
+
+    func save() {
+        PFObject(className: "Glucose", dictionary: [
+            "level": level,
+             "date": date]).saveInBackground()
     }
 
     func saveInBackgroundWithBlock(block: PFBooleanResultBlock!) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		499DBDD019BBEEF800634B8F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499DBDCF19BBEEF800634B8F /* HealthKit.framework */; };
 		49A5A18A19BAC28300E9CC50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18919BAC28300E9CC50 /* AppDelegate.swift */; };
 		49A5A18C19BAC28300E9CC50 /* InsulinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18B19BAC28300E9CC50 /* InsulinViewController.swift */; };
 		49A5A18E19BAC28300E9CC50 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18D19BAC28300E9CC50 /* TrackViewController.swift */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		499DBDCF19BBEEF800634B8F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		499DBDD119BBEF6500634B8F /* TypeOneTwo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TypeOneTwo.entitlements; sourceTree = "<group>"; };
 		49A5A18419BAC28300E9CC50 /* TypeOneTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeOneTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A5A18819BAC28300E9CC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49A5A18919BAC28300E9CC50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499DBDD019BBEEF800634B8F /* HealthKit.framework in Frameworks */,
 				49A5A1C019BAC61E00E9CC50 /* SystemConfiguration.framework in Frameworks */,
 				49A5A1BE19BAC61800E9CC50 /* StoreKit.framework in Frameworks */,
 				49A5A1BC19BAC61300E9CC50 /* Security.framework in Frameworks */,
@@ -89,6 +93,7 @@
 		49A5A17B19BAC28300E9CC50 = {
 			isa = PBXGroup;
 			children = (
+				499DBDCF19BBEEF800634B8F /* HealthKit.framework */,
 				49A5A18619BAC28300E9CC50 /* TypeOneTwo */,
 				49A5A18519BAC28300E9CC50 /* Products */,
 				49A5A1C119BAC64E00E9CC50 /* TypeOneTwo-Bridging-Header.h */,
@@ -106,6 +111,7 @@
 		49A5A18619BAC28300E9CC50 /* TypeOneTwo */ = {
 			isa = PBXGroup;
 			children = (
+				499DBDD119BBEF6500634B8F /* TypeOneTwo.entitlements */,
 				49A5A18919BAC28300E9CC50 /* AppDelegate.swift */,
 				49A5A1CD19BAE6DE00E9CC50 /* Constants.swift */,
 				49A5A1C819BACD1A00E9CC50 /* Models */,
@@ -206,6 +212,12 @@
 				TargetAttributes = {
 					49A5A18319BAC28300E9CC50 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = DVS6NR923Y;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -354,6 +366,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TypeOneTwo/TypeOneTwo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TypeOneTwo",
@@ -361,6 +376,7 @@
 				INFOPLIST_FILE = TypeOneTwo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TypeOneTwo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -372,6 +388,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TypeOneTwo/TypeOneTwo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TypeOneTwo",
@@ -379,6 +398,7 @@
 				INFOPLIST_FILE = TypeOneTwo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TypeOneTwo-Bridging-Header.h";
 			};
 			name = Release;
