@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4944482A19BBCFE600787903 /* testerImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4944482919BBCFE600787903 /* testerImage.png */; };
 		49A5A18A19BAC28300E9CC50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18919BAC28300E9CC50 /* AppDelegate.swift */; };
 		49A5A18C19BAC28300E9CC50 /* InsulinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18B19BAC28300E9CC50 /* InsulinViewController.swift */; };
 		49A5A18E19BAC28300E9CC50 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18D19BAC28300E9CC50 /* TrackViewController.swift */; };
@@ -35,7 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4944482919BBCFE600787903 /* testerImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testerImage.png; path = ../../../../Desktop/testerImage.png; sourceTree = "<group>"; };
 		49A5A18419BAC28300E9CC50 /* TypeOneTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeOneTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A5A18819BAC28300E9CC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49A5A18919BAC28300E9CC50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		49A5A18719BAC28300E9CC50 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4944482919BBCFE600787903 /* testerImage.png */,
 				49A5A18819BAC28300E9CC50 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -237,7 +234,6 @@
 			files = (
 				49A5A19119BAC28300E9CC50 /* Main.storyboard in Resources */,
 				49A5A19319BAC28300E9CC50 /* Images.xcassets in Resources */,
-				4944482A19BBCFE600787903 /* testerImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

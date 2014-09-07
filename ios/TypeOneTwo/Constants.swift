@@ -6,4 +6,4 @@
 //  Copyright (c) 2014 TypeOneTwo. All rights reserved.
 //
 
-let typeOneTwoGreen = UIColor(red: 0, green: 217.0/255.0, blue: 72.0/255.0, alpha: 1)
+let globalThemeColor = UIColor(red: 0/255.0, green: 188.0/255.0, blue: 212.0/255.0, alpha: 1)

@@ -28,9 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func configureAppearance(application: UIApplication) {
-        UINavigationBar.appearance().barTintColor = typeOneTwoGreen
+        UINavigationBar.appearance().barTintColor = globalThemeColor
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().barStyle = .Black
-        UITabBar.appearance().tintColor = typeOneTwoGreen
+        UITabBar.appearance().tintColor = globalThemeColor
     }
 }

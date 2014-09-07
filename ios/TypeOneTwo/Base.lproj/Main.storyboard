@@ -429,5 +429,5 @@
         <image name="EnterIcon" width="25" height="25"/>
         <image name="GraphIcon" width="25" height="15"/>
     </resources>
-    <color key="tintColor" red="0.0" green="0.84999999999999998" blue="0.28333333329999999" alpha="1" colorSpace="deviceRGB"/>
+    <color key="tintColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="deviceRGB"/>
 </document>
