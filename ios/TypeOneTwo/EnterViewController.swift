@@ -20,7 +20,6 @@ class EnterViewController: UITableViewController {
         let readDataTypes = NSSet(object: HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose))
         healthStore.requestAuthorizationToShareTypes(nil, readTypes: readDataTypes) { (success, error) in
             if !success {
-                println("HealthKit authorization not permissed")
                 return
             }
 
@@ -34,7 +33,6 @@ class EnterViewController: UITableViewController {
             HKQuantityTypeIdentifierBloodGlucose as String) as HKSampleType, predicate: nil,
             limit: 0, sortDescriptors: [timeSortDescriptor]) { (query, results, error) in
                 if results == nil {
-                    println("no results")
                     return
                 }
 
@@ -56,7 +54,6 @@ class EnterViewController: UITableViewController {
         query.whereKey("date", equalTo: sample.endDate)
         query.findObjectsInBackgroundWithBlock { (objects, error) in
             if objects.count == 0 {
-                println("pushing!")
                 let unit = HKUnit(fromString: "mg/dL")
                 let level = sample.quantity.doubleValueForUnit(unit)
                 let glucose = Glucose(level: level, date: sample.endDate)

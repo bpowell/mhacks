@@ -36,5 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barStyle = .Black
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 17)]
         UITabBar.appearance().tintColor = globalThemeColor
+        SVProgressHUD.setBackgroundColor(UIColor.clearColor())
+        SVProgressHUD.setForegroundColor(globalThemeColor)
+        SVProgressHUD.setRingThickness(5)
     }
 }

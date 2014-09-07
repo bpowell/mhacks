@@ -8,14 +8,17 @@
 
 import UIKit
 
-class TrackViewController: UIViewController {
+class TrackViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var insulinWebView: UIWebView!
     @IBOutlet weak var glucoseWebView: UIWebView!
+    @IBOutlet weak var refreshButton: UIButton!
 
     var request: NSMutableURLRequest!
 
     override func viewDidLoad() {
+        insulinWebView.delegate = self
+        glucoseWebView.delegate = self
         loadGraphs()
     }
 
@@ -26,6 +29,13 @@ class TrackViewController: UIViewController {
 
     @IBAction func refreshButtonTapped(sender: UIButton!) {
         loadGraphs()
+        SVProgressHUD.show()
+        finished = 0
+        UIView.animateWithDuration(0.4) {
+            self.refreshButton.alpha = 0
+            self.insulinWebView.alpha = 0
+            self.glucoseWebView.alpha = 0
+        }
     }
 
     func loadInsulinGraph() {
@@ -43,13 +53,39 @@ class TrackViewController: UIViewController {
         let post = "sessiontoken=\(token)"
         let postData = post.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)!
         let postLength = "\(postData.length)"
-        request = NSMutableURLRequest()
 
+        request = NSMutableURLRequest()
         request.URL = NSURL(string: URLString)
         request.HTTPMethod = "POST"
         request.setValue(postLength, forHTTPHeaderField: "Content-Length")
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.HTTPBody = postData
+    }
+
+    func webViewDidStartLoad(webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+
+    var finished = 0
+    func webViewDidFinishLoad(webView: UIWebView) {
+        if (finished++ > 0) {
+            SVProgressHUD.dismiss()
+            UIView.animateWithDuration(0.4) {
+                self.refreshButton.alpha = 1
+                self.insulinWebView.alpha = 1
+                self.glucoseWebView.alpha = 1
+            }
+        }
+    }
+
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        finished = 1
+        SVProgressHUD.dismiss()
+        UIView.animateWithDuration(0.4) {
+            self.refreshButton.alpha = 1
+            self.insulinWebView.alpha = 1
+            self.glucoseWebView.alpha = 1
+        }
     }
 
 }

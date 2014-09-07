@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491FDB7A19BC6612000DFFB0 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 491FDB7419BC6612000DFFB0 /* LICENSE.txt */; };
+		491FDB7C19BC6612000DFFB0 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 491FDB7719BC6612000DFFB0 /* SVProgressHUD.bundle */; };
+		491FDB7D19BC6612000DFFB0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 491FDB7919BC6612000DFFB0 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-Xanalyzer -analyzer-disable-checker -w"; }; };
 		493B8EAF19BC548A00CF2E62 /* DividerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B8EAE19BC548A00CF2E62 /* DividerViewController.swift */; };
 		499DBDD019BBEEF800634B8F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499DBDCF19BBEEF800634B8F /* HealthKit.framework */; };
 		49A5A18A19BAC28300E9CC50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18919BAC28300E9CC50 /* AppDelegate.swift */; };
@@ -36,6 +39,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		491FDB7419BC6612000DFFB0 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		491FDB7519BC6612000DFFB0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		491FDB7719BC6612000DFFB0 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		491FDB7819BC6612000DFFB0 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		491FDB7919BC6612000DFFB0 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		493B8EAE19BC548A00CF2E62 /* DividerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerViewController.swift; sourceTree = "<group>"; };
 		499DBDCF19BBEEF800634B8F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		499DBDD119BBEF6500634B8F /* TypeOneTwo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TypeOneTwo.entitlements; sourceTree = "<group>"; };
@@ -92,6 +100,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491FDB7319BC6612000DFFB0 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				491FDB7419BC6612000DFFB0 /* LICENSE.txt */,
+				491FDB7519BC6612000DFFB0 /* README.md */,
+				491FDB7619BC6612000DFFB0 /* SVProgressHUD */,
+			);
+			path = SVProgressHUD;
+			sourceTree = SOURCE_ROOT;
+		};
+		491FDB7619BC6612000DFFB0 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				491FDB7719BC6612000DFFB0 /* SVProgressHUD.bundle */,
+				491FDB7819BC6612000DFFB0 /* SVProgressHUD.h */,
+				491FDB7919BC6612000DFFB0 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		49A5A17B19BAC28300E9CC50 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +150,7 @@
 				49A5A19219BAC28300E9CC50 /* Images.xcassets */,
 				49A5A1AC19BAC58600E9CC50 /* Frameworks */,
 				49A5A18719BAC28300E9CC50 /* Supporting Files */,
+				491FDB7319BC6612000DFFB0 /* SVProgressHUD */,
 			);
 			path = TypeOneTwo;
 			sourceTree = "<group>";
@@ -247,8 +276,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491FDB7A19BC6612000DFFB0 /* LICENSE.txt in Resources */,
 				49A5A19119BAC28300E9CC50 /* Main.storyboard in Resources */,
 				49A5A19319BAC28300E9CC50 /* Images.xcassets in Resources */,
+				491FDB7C19BC6612000DFFB0 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +298,7 @@
 				49A5A1C719BACD1500E9CC50 /* Insulin.swift in Sources */,
 				49A5A1CC19BAD30A00E9CC50 /* Glucose.swift in Sources */,
 				49A5A18C19BAC28300E9CC50 /* InsulinViewController.swift in Sources */,
+				491FDB7D19BC6612000DFFB0 /* SVProgressHUD.m in Sources */,
 				49A5A1CE19BAE6DE00E9CC50 /* Constants.swift in Sources */,
 				493B8EAF19BC548A00CF2E62 /* DividerViewController.swift in Sources */,
 				49A5A1D419BAF3A800E9CC50 /* GlucoseViewController.swift in Sources */,
