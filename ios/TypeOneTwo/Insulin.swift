@@ -6,17 +6,11 @@
 //  Copyright (c) 2014 TypeOneTwo. All rights reserved.
 //
 
+// Not included in HealthKit
 class Insulin {
     var type: InsulinType
     var dose: Float
     var date: NSDate
-
-    private var asParseObject: PFObject {
-        return PFObject(className: "Insulin", dictionary: [
-            "type": type.toRaw(),
-            "dose": dose,
-            "date": date])
-    }
 
     init(type: InsulinType, dose: Float, date: NSDate) {
         self.type = type
@@ -25,18 +19,26 @@ class Insulin {
     }
 
     convenience init(parseObject: PFObject) {
-        let type = parseObject["level"] as Int
-        let dose = parseObject["level"] as Float
+        let type = parseObject["type"] as Int
+        let dose = parseObject["dose"] as Float
         let date = parseObject["date"] as NSDate
         self.init(type: InsulinType.fromRaw(type)!, dose: dose, date: date)
     }
 
     func saveInBackgroundWithBlock(block: PFBooleanResultBlock) {
-        asParseObject.saveInBackgroundWithBlock(block)
+        PFObject(className: "Insulin", dictionary: [
+            "type": type.toRaw(),
+            "dose": dose,
+            "date": date]).saveInBackgroundWithBlock(block)
     }
 
     func delete() {
-        asParseObject.deleteInBackground()
+        PFObject(className: "Insulin", dictionary: [
+            "type": type.toRaw(),
+            "dose": dose,
+            "date": date]).deleteInBackgroundWithBlock { (success, error) in
+            println(success)
+        }
     }
 }
 

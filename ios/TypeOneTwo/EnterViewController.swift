@@ -33,7 +33,7 @@ class EnterViewController: UITableViewController {
         let timeSortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
         let query = HKSampleQuery(sampleType: HKQuantityType.quantityTypeForIdentifier(
             HKQuantityTypeIdentifierBloodGlucose as String) as HKSampleType, predicate: nil,
-            limit: 5, sortDescriptors: [timeSortDescriptor]) { (query, results, error) in
+            limit: 0, sortDescriptors: [timeSortDescriptor]) { (query, results, error) in
                 if results == nil {
                     println("no results")
                     return
@@ -140,6 +140,7 @@ class EnterViewController: UITableViewController {
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
             let object = self.objects[indexPath.row] as PFObject
+            object.deleteInBackground()
             switch object.parseClassName {
             case "Glucose":
                 Glucose(parseObject: object).delete()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493B8EAD19BC326800CF2E62 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493B8EAC19BC326800CF2E62 /* GameKit.framework */; };
 		499DBDD019BBEEF800634B8F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499DBDCF19BBEEF800634B8F /* HealthKit.framework */; };
 		49A5A18A19BAC28300E9CC50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18919BAC28300E9CC50 /* AppDelegate.swift */; };
 		49A5A18C19BAC28300E9CC50 /* InsulinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A18B19BAC28300E9CC50 /* InsulinViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493B8EAC19BC326800CF2E62 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		499DBDCF19BBEEF800634B8F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		499DBDD119BBEF6500634B8F /* TypeOneTwo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TypeOneTwo.entitlements; sourceTree = "<group>"; };
 		49A5A18419BAC28300E9CC50 /* TypeOneTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeOneTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 				49A5A1B619BAC5CF00E9CC50 /* libz.dylib in Frameworks */,
 				49A5A1B419BAC5C800E9CC50 /* CoreLocation.framework in Frameworks */,
 				49A5A1B219BAC5C200E9CC50 /* CoreGraphics.framework in Frameworks */,
+				493B8EAD19BC326800CF2E62 /* GameKit.framework in Frameworks */,
 				49A5A1B019BAC5BC00E9CC50 /* CFNetwork.framework in Frameworks */,
 				49A5A1AE19BAC5B700E9CC50 /* AudioToolbox.framework in Frameworks */,
 				49A5A1A919BAC55C00E9CC50 /* Parse.framework in Frameworks */,
@@ -93,6 +96,7 @@
 		49A5A17B19BAC28300E9CC50 = {
 			isa = PBXGroup;
 			children = (
+				493B8EAC19BC326800CF2E62 /* GameKit.framework */,
 				499DBDCF19BBEEF800634B8F /* HealthKit.framework */,
 				49A5A18619BAC28300E9CC50 /* TypeOneTwo */,
 				49A5A18519BAC28300E9CC50 /* Products */,
@@ -214,6 +218,9 @@
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = DVS6NR923Y;
 						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
