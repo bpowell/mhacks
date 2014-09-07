@@ -1,0 +1,32 @@
+<html>
+        <head>
+	<title>{{.PageTitle}}</title>
+                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+                <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+                <script type="text/javascript">
+
+		google.load('visualization', '1.0', {'packages':['corechart']});
+		google.setOnLoadCallback(drawChart);
+
+                // Callback that creates and populates a data table,
+                // instantiates the pie chart, passes in the data and
+                // draws it.
+                function drawChart() {
+			var data = google.visualization.arrayToDataTable({{.Json}});
+			var options = {
+			       title: '{{.ChartTitle}}',
+			       curveType: 'function',
+			};
+
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+                }
+                </script>
+        </head>
+
+        <body>
+                <!--Div that will hold the pie chart-->
+                <div id="chart_div"></div>
+        </body>
+</html>

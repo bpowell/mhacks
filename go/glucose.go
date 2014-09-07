@@ -45,6 +45,34 @@ func glucoseGraph(w http.ResponseWriter, r *http.Request) {
 	template.Must(template.ParseFiles("graph.html")).ExecuteTemplate(w, "graph.html", &page)
 }
 
+func statsGraph(w http.ResponseWriter, r *http.Request) {
+	log.Printf("%s\n", r.Method)
+	if r.Method != "POST" {
+		http.Error(w, "Error lol", http.StatusInternalServerError)
+	}
+
+	err := r.ParseForm()
+	if err != nil {
+		log.Printf("bad %s\n", err.Error())
+	}
+
+	s := r.FormValue("sessiontoken")
+	glucose := getGlucoseFromParse(s)
+	var levels []int
+	for _, value := range glucose {
+		levels = append(levels, value.Level)
+	}
+	median := Median(levels)
+	avg := average(levels)
+	std := online_variance(levels)
+	var json string = fmt.Sprintf("[[\"Stat\", \"Value\"],[\"Median\", %d],[\"Average\", %f], [\"Std Dev\", %f]]", median, avg, std)
+	log.Printf("%s\n", json)
+
+	page := GraphPage{"Stats", json, "Basic Stats"}
+
+	template.Must(template.ParseFiles("barchart.html")).ExecuteTemplate(w, "barchart.html", &page)
+}
+
 func getGlucoseFromParse(token string) ParseGlucoseSlice {
 	client := &http.Client{}
 

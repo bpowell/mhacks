@@ -18,6 +18,7 @@ func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/glucoseGraph", glucoseGraph)
 	http.HandleFunc("/insulinGraph", insulinGraph)
+	http.HandleFunc("/stats", statsGraph)
 	http.ListenAndServe(":8080", nil)
 }
 
