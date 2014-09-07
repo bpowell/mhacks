@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import HealthKit
+
+var healthStore = HKHealthStore()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

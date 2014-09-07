@@ -6,11 +6,65 @@
 //  Copyright (c) 2014 TypeOneTwo. All rights reserved.
 //
 
+import HealthKit
+
 class EnterViewController: UITableViewController {
 
     var objects = [AnyObject]()
     var oldObjects:[AnyObject]!
     var glucoseQueried = false, insulinQueried = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let writeDataTypes = NSSet(object: HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose))
+        let readDataTypes = writeDataTypes
+        healthStore.requestAuthorizationToShareTypes(writeDataTypes, readTypes: readDataTypes) { (success, error) in
+            if !success {
+                println("HealthKit authorization not permissed")
+                return
+            }
+
+            self.syncWithHealthKit()
+        }
+    }
+
+    func syncWithHealthKit() {
+        let timeSortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+        let query = HKSampleQuery(sampleType: HKQuantityType.quantityTypeForIdentifier(
+            HKQuantityTypeIdentifierBloodGlucose as String) as HKSampleType, predicate: nil,
+            limit: 5, sortDescriptors: [timeSortDescriptor]) { (query, results, error) in
+                if results == nil {
+                    println("no results")
+                    return
+                }
+
+                if results.count > 0 {
+                    self.retrievedGlucoseSamples(results)
+                }
+        }
+        healthStore.executeQuery(query)
+    }
+
+    func retrievedGlucoseSamples(samples: [AnyObject]!) {
+        for sample in samples {
+            pushSampleToParseIfNew(sample as HKQuantitySample)
+        }
+    }
+
+    func pushSampleToParseIfNew(sample: HKQuantitySample) {
+        let query = PFQuery(className: "Glucose")
+        query.whereKey("date", equalTo: sample.endDate)
+        query.findObjectsInBackgroundWithBlock { (objects, error) in
+            if objects.count == 0 {
+                println("pushing!")
+                let unit = HKUnit(fromString: "mg/dL")
+                let level = sample.quantity.doubleValueForUnit(unit)
+                let glucose = Glucose(level: level, date: sample.endDate)
+                glucose.save()
+            }
+        }
+    }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)

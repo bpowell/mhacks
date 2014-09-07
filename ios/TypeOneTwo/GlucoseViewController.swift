@@ -20,7 +20,7 @@ class GlucoseViewController: UIViewController {
     }
 
     @IBAction func saveButtonTapped(sender: UIButton) {
-        let level = (levelTextField.text as NSString).integerValue
+        let level = (levelTextField.text as NSString).doubleValue
         let date = datePicker.date
         let glucose = Glucose(level: level, date: date)
         glucose.saveInBackgroundWithBlock { (succeeded, error) -> Void in
