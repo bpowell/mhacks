@@ -17,7 +17,7 @@ import android.view.MenuItem;
 import android.util.Log;
 
 import com.appspot.typeonetwo.activities.DataEntryChooserActivity;
-import com.appspot.typeonetwo.fragments.InputFragment;
+import com.appspot.typeonetwo.fragments.DataFragment;
 import com.appspot.typeonetwo.fragments.TrackingFragment;
 
 import com.parse.*;
@@ -108,11 +108,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return InputFragment.newInstance();
+                    return new DataFragment();
                 case 1:
                     return TrackingFragment.newInstance();
                 default:
-                    return InputFragment.newInstance();
+                    return new DataFragment();
             }
         }
 
