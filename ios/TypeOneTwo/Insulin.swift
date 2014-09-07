@@ -11,13 +11,6 @@ class Insulin {
     var dose: Float
     var date: NSDate
 
-    private var asParseObject: PFObject {
-        return PFObject(className: "Insulin", dictionary: [
-            "type": type.toRaw(),
-            "dose": dose,
-            "date": date])
-    }
-
     init(type: InsulinType, dose: Float, date: NSDate) {
         self.type = type
         self.dose = dose
@@ -32,11 +25,17 @@ class Insulin {
     }
 
     func saveInBackgroundWithBlock(block: PFBooleanResultBlock) {
-        asParseObject.saveInBackgroundWithBlock(block)
+        return PFObject(className: "Insulin", dictionary: [
+            "type": type.toRaw(),
+            "dose": dose,
+            "date": date]).saveInBackgroundWithBlock(block)
     }
 
     func delete() {
-        asParseObject.deleteInBackground()
+        return PFObject(className: "Insulin", dictionary: [
+            "type": type.toRaw(),
+            "dose": dose,
+            "date": date]).deleteInBackground()
     }
 }
 

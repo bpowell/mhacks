@@ -17,9 +17,8 @@ class EnterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let writeDataTypes = NSSet(object: HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose))
-        let readDataTypes = writeDataTypes
-        healthStore.requestAuthorizationToShareTypes(writeDataTypes, readTypes: readDataTypes) { (success, error) in
+        let readDataTypes = NSSet(object: HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose))
+        healthStore.requestAuthorizationToShareTypes(nil, readTypes: readDataTypes) { (success, error) in
             if !success {
                 println("HealthKit authorization not permissed")
                 return
@@ -33,7 +32,7 @@ class EnterViewController: UITableViewController {
         let timeSortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
         let query = HKSampleQuery(sampleType: HKQuantityType.quantityTypeForIdentifier(
             HKQuantityTypeIdentifierBloodGlucose as String) as HKSampleType, predicate: nil,
-            limit: 5, sortDescriptors: [timeSortDescriptor]) { (query, results, error) in
+            limit: 0, sortDescriptors: [timeSortDescriptor]) { (query, results, error) in
                 if results == nil {
                     println("no results")
                     return

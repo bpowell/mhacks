@@ -10,12 +10,6 @@ class Glucose {
     var level: Double // mg/dL
     var date: NSDate
 
-    private var asParseObject: PFObject {
-        return PFObject(className: "Glucose", dictionary: [
-            "level": level,
-             "date": date])
-    }
-
     init(level: Double, date: NSDate) {
         self.level = level
         self.date = date
@@ -28,15 +22,21 @@ class Glucose {
     }
 
     func save() {
-        asParseObject.saveInBackground()
+        PFObject(className: "Glucose", dictionary: [
+            "level": level,
+             "date": date]).saveInBackground()
     }
 
     func delete() {
-        asParseObject.deleteInBackground()
+        PFObject(className: "Glucose", dictionary: [
+            "level": level,
+             "date": date]).deleteInBackground()
     }
 
     func saveInBackgroundWithBlock(block: PFBooleanResultBlock!) {
-        asParseObject.saveInBackgroundWithBlock(block)
+        PFObject(className: "Glucose", dictionary: [
+            "level": level,
+             "date": date]).saveInBackgroundWithBlock(block)
     }
 
 }
