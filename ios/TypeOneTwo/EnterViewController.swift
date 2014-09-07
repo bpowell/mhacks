@@ -139,7 +139,15 @@ class EnterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
-            (self.objects[indexPath.row] as PFObject).deleteInBackground()
+            let object = self.objects[indexPath.row] as PFObject
+            switch object.parseClassName {
+            case "Glucose":
+                Glucose(parseObject: object).delete()
+            case "Insulin":
+                Insulin(parseObject: object).delete()
+            default:
+                fatalError("unknown parseClassName")
+            }
             self.objects.removeAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
