@@ -23,69 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61565fe8-526a-4c13-8deb-7c7a8b2a00ce" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/libs/Parse-1.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/gradle/wrapper/gradle-wrapper.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-hdpi/ic_action_accept.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-ldpi/ic_action_accept.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-mdpi/ic_action_accept.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-xhdpi/ic_action_accept.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-hdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-ldpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-mdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-xhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-hdpi/ic_menu_add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-ldpi/ic_menu_add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-mdpi/ic_menu_add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/drawable-xhdpi/ic_menu_add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/androidTest/java/com/appspot/typeonetwo/ApplicationTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/appspot/typeonetwo/activities/DataEntryChooserActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/appspot/typeonetwo/fragments/DataFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/appspot/typeonetwo/models/Glucose.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/appspot/typeonetwo/activities/GlucoseEntryActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/appspot/typeonetwo/models/Insulin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/appspot/typeonetwo/activities/InsulinEntryActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/appspot/typeonetwo/activities/MainActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/.idea/libraries/Parse_1_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Parse_1_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/appspot/typeonetwo/fragments/TrackingFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/menu/accept.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_data_entry_chooser.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_glucose_entry.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_insulin_entry.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_main.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/menu/add.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/android.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/.idea/libraries/androidannotations_api_3_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/androidannotations_api_3_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/app.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/.idea/libraries/commons_lang_2_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang_2_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/values/dimens.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/fragment_data.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/fragment_tracking.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/gradle.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/gradlew.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/gradlew" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/.idea/libraries/gson_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_data.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_tracking.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/list_cell.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/proguard-rules.pro" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/settings.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/app/src/main/res/values/strings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/.idea/libraries/support_v4_19_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_19_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../android/typeonetwo.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../android/TypeOneTwo/.gitignore" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../android/TypeOneTwo/AndroidManifest.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../android/TypeOneTwo/ant.properties" afterPath="" />
@@ -128,11 +65,61 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../android/TypeOneTwo/src/com/appspot/typeonetwo/fragments/TrackingFragment.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../android/TypeOneTwo/src/com/appspot/typeonetwo/models/Glucose.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../android/TypeOneTwo/src/com/appspot/typeonetwo/models/Insulin.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../android/.gitignore" afterPath="$PROJECT_DIR$/../android/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../android/.idea/gradle.xml" afterPath="$PROJECT_DIR$/../android/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../android/.idea/misc.xml" afterPath="$PROJECT_DIR$/../android/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../android/.idea/modules.xml" afterPath="$PROJECT_DIR$/../android/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../android/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../android/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/libs/Parse-1.5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/proguard-rules.pro" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/appspot/typeonetwo/ApplicationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/appspot/typeonetwo/activities/DataEntryChooserActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/appspot/typeonetwo/activities/GlucoseEntryActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/appspot/typeonetwo/activities/InsulinEntryActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/appspot/typeonetwo/activities/MainActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/appspot/typeonetwo/fragments/DataFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/appspot/typeonetwo/fragments/TrackingFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/appspot/typeonetwo/models/Glucose.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/appspot/typeonetwo/models/Insulin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_action_accept.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_menu_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/ic_action_accept.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/ic_menu_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_action_accept.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_menu_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_action_accept.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_menu_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_data_entry_chooser.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_glucose_entry.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_insulin_entry.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_data.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tracking.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_data.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_tracking.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_cell.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/menu/accept.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/menu/add.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gradle.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gradlew" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gradlew.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/typeonetwo.iml" afterPath="" />
     </list>
     <ignored path="typeonetwo.iws" />
     <ignored path=".idea/workspace.xml" />
