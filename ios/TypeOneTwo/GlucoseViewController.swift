@@ -31,7 +31,7 @@ class GlucoseViewController: UIViewController {
         let glucose = Glucose(level: level, date: date)
         glucose.saveInBackgroundWithBlock { (succeeded, error) -> Void in
             if succeeded {
-                self.navigationController!.popToRootViewControllerAnimated(true)
+                self.navigationController?.popToRootViewControllerAnimated(true)
             }
         }
     }

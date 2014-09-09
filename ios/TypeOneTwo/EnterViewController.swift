@@ -154,7 +154,13 @@ class EnterViewController: UITableViewController {
 
     let types = [InsulinType.RapidActing.toRaw(): "Rapid-Acting", InsulinType.LongActing.toRaw(): "Long-Acting"]
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let object = objects[indexPath.row] as PFObject
+        var object: PFObject
+        switch indexPath.row {
+        case 0..<objects.count:
+            object = objects[indexPath.row] as PFObject
+        default:
+            object = oldObjects[indexPath.row] as PFObject
+        }
 
         if object.parseClassName == "Glucose" {
             // Set the level label.
