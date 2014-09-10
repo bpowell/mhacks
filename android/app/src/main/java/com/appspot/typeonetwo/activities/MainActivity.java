@@ -20,23 +20,34 @@ import com.appspot.typeonetwo.activities.DataEntryChooserActivity;
 import com.appspot.typeonetwo.fragments.DataFragment;
 import com.appspot.typeonetwo.fragments.TrackingFragment;
 
+import com.appspot.typeonetwo.R;
+
 import com.parse.*;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
+@EActivity(R.layout.activity_main)
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 
     SectionsPagerAdapter mSectionsPagerAdapter;
 
+    @ViewById(R.id.pager)
     ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+    }
+
+    @AfterViews
+    void init() {
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(this.getSupportFragmentManager());
 
         // set the viewpager with the sections adapter
-        mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         final ActionBar actionBar = getActionBar();

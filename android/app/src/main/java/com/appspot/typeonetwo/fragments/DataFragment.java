@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.appspot.typeonetwo.activities.R;
+import com.appspot.typeonetwo.R;
 
 import com.parse.*;
 

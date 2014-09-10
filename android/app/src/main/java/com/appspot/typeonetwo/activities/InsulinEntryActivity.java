@@ -23,6 +23,8 @@ import java.util.Date;
 import com.appspot.typeonetwo.activities.MainActivity;
 import com.appspot.typeonetwo.models.Insulin;
 
+import com.appspot.typeonetwo.R;
+
 import com.parse.*;
 
 public class InsulinEntryActivity extends Activity {

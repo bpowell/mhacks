@@ -12,6 +12,8 @@ import android.util.Log;
 import com.appspot.typeonetwo.activities.InsulinEntryActivity;
 import com.appspot.typeonetwo.activities.GlucoseEntryActivity;
 
+import com.appspot.typeonetwo.R;
+
 public class DataEntryChooserActivity extends Activity {
 
     @Override
