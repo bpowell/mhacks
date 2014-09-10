@@ -14,25 +14,33 @@ import com.appspot.typeonetwo.activities.GlucoseEntryActivity;
 
 import com.appspot.typeonetwo.R;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+
+@EActivity(R.layout.activity_data_entry_chooser)
 public class DataEntryChooserActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_entry_chooser);
+    }
 
+    @AfterViews
+    void init() {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     public void onInsulinChosen(View v) {
-        Intent intent = new Intent(this, InsulinEntryActivity.class);
-        startActivity(intent);
+        InsulinEntryActivity_
+                .intent(this)
+                .start();
     }
 
     public void onGlucoseChosen(View v) {
-        Intent intent = new Intent(this, GlucoseEntryActivity.class);
-        startActivity(intent);
+        GlucoseEntryActivity_
+                .intent(this)
+                .start();
     }
 
 }

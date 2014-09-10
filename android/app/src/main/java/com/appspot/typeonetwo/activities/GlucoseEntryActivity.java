@@ -26,6 +26,10 @@ import com.appspot.typeonetwo.R;
 
 import com.parse.*;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+
+@EActivity(R.layout.activity_glucose_entry)
 public class GlucoseEntryActivity extends Activity {
 
     private static Integer year, month, day, hour, minute;
@@ -35,7 +39,11 @@ public class GlucoseEntryActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_glucose_entry);
+
+    }
+
+    @AfterViews
+    void init() {
 
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -74,8 +82,9 @@ public class GlucoseEntryActivity extends Activity {
             glucose.put("date", cal.getTime());
             glucose.saveInBackground();
 
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            MainActivity_
+                    .intent(this)
+                    .start();
 
         }
     }

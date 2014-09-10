@@ -27,6 +27,10 @@ import com.appspot.typeonetwo.R;
 
 import com.parse.*;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+
+@EActivity(R.layout.activity_insulin_entry)
 public class InsulinEntryActivity extends Activity {
 
     private Insulin insulin;
@@ -38,8 +42,11 @@ public class InsulinEntryActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insulin_entry);
 
+    }
+
+    @AfterViews
+        void init() {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
@@ -79,8 +86,9 @@ public class InsulinEntryActivity extends Activity {
             insulin.put("date", cal.getTime());
             insulin.saveInBackground();
 
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            MainActivity_
+                    .intent(this)
+                    .start();
 
         }
     }

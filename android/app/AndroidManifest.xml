@@ -19,20 +19,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.DataEntryChooserActivity"
+        <activity android:name=".activities.DataEntryChooserActivity_"
             android:label="@string/data_entry_chooser"
             android:theme="@android:style/Theme.Holo.Light"
-            android:parentActivityName="com.appspot.typeonetwo.activities.MainActivity">
+            android:parentActivityName="com.appspot.typeonetwo.activities.MainActivity_">
         </activity>
-        <activity android:name=".activities.InsulinEntryActivity"
+        <activity android:name=".activities.InsulinEntryActivity_"
             android:label="@string/insulin_entry"
             android:theme="@android:style/Theme.Holo.Light"
-            android:parentActivityName="com.appspot.typeonetwo.activities.DataEntryChooserActivity">
+            android:parentActivityName="com.appspot.typeonetwo.activities.DataEntryChooserActivity_">
         </activity>
-        <activity android:name=".activities.GlucoseEntryActivity"
+        <activity android:name=".activities.GlucoseEntryActivity_"
             android:label="@string/glucose_entry"
             android:theme="@android:style/Theme.Holo.Light"
-            android:parentActivityName="com.appspot.typeonetwo.activities.DataEntryChooserActivity">
+            android:parentActivityName="com.appspot.typeonetwo.activities.DataEntryChooserActivity_">
         </activity>
 
     </application>

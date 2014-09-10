@@ -69,8 +69,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     }
 
     public void openDataEntryChooser() {
-        Intent intent = new Intent(this, DataEntryChooserActivity.class);
-        startActivity(intent);
+        DataEntryChooserActivity_
+                .intent(this)
+                .start();
     }
 
     @Override
