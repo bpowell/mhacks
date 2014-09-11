@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        // replace with the current version of the Android plugin
+        classpath 'com.android.tools.build:gradle:0.12.+'
+        // Since Android's Gradle plugin 0.11, you have to use android-apt >= 1.3
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.+'
+        classpath 'commons-lang:commons-lang:2.6'
+    }
+
+}
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+def AAVersion = '3.0.1'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    compile "com.android.support:support-v4:19.1.0"
+    compile 'com.google.code.gson:gson:2.2.2'
+    compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+}
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "com.appspot.typeonetwo"
+        minSdkVersion 14
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            resources.srcDirs = ['src/main/resources']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+        }
+    }
+
+        buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
