@@ -21,19 +21,19 @@ class Insulin {
         let type = parseObject["type"] as Int
         let dose = parseObject["dose"] as Float
         let date = parseObject["date"] as NSDate
-        self.init(type: InsulinType.fromRaw(type)!, dose: dose, date: date)
+        self.init(type: InsulinType(rawValue: type)!, dose: dose, date: date)
     }
 
     func saveInBackgroundWithBlock(block: PFBooleanResultBlock) {
         return PFObject(className: "Insulin", dictionary: [
-            "type": type.toRaw(),
+            "type": type.rawValue,
             "dose": dose,
             "date": date]).saveInBackgroundWithBlock(block)
     }
 
     func delete() {
         return PFObject(className: "Insulin", dictionary: [
-            "type": type.toRaw(),
+            "type": type.rawValue,
             "dose": dose,
             "date": date]).deleteInBackground()
     }
