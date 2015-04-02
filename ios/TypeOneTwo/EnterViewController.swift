@@ -152,7 +152,7 @@ class EnterViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     }
 
-    let types = [InsulinType.RapidActing.toRaw(): "Rapid-Acting", InsulinType.LongActing.toRaw(): "Long-Acting"]
+    let types = [InsulinType.RapidActing.rawValue: "Rapid-Acting", InsulinType.LongActing.rawValue: "Long-Acting"]
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var object: PFObject
         switch indexPath.row {

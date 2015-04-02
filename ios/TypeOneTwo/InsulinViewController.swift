@@ -30,7 +30,7 @@ class InsulinViewController: UIViewController {
     }
 
     @IBAction func saveButtonTapped(sender: UIButton) {
-        let type = InsulinType.fromRaw(actingSegmentedControl.selectedSegmentIndex)!
+        let type = InsulinType(rawValue: actingSegmentedControl.selectedSegmentIndex)!
         let dose = (doseTextField.text as NSString).floatValue
         let date = datePicker.date
         let insulin = Insulin(type: type, dose: dose, date: date)
